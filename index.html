@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尤果网模特写真-写真作品类型与挑选指南</title>
+<meta name="description" content="尤果网模特写真整理平台作品分类、写真套装规格与挑选方法，收录水手服、旗袍、泳装等主题合集，附更新时间线、读者评论与常见问题，帮你看懂模特写真套装的构图、服装与画质差异。">
+<meta name="keywords" content="尤果网模特写真">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b03a48'/%3E%3Ccircle cx='32' cy='24' r='9' fill='%23f7e9dd'/%3E%3Cpath d='M14 54c0-11 8-18 18-18s18 7 18 18z' fill='%23f7e9dd'/%3E%3C/svg%3E">
+<style>
+:root{
+  --main:#b03a48;
+  --main-deep:#8a2a36;
+  --accent:#d9a441;
+  --ink:#2a2320;
+  --ink-soft:#5c514c;
+  --line:#e3d8d1;
+  --bg:#faf6f2;
+  --bg-card:#ffffff;
+  --bg-warm:#f3e9e1;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(90,50,40,.07);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --sticky-h:96px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  line-height:1.75;font-size:16px;
+}
+img{max-width:100%;display:block}
+a{color:var(--main-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3{line-height:1.35;margin:0}
+section[id]{scroll-margin-top:var(--sticky-h)}
+
+/* ---------- 吸顶区 ---------- */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:var(--main-deep);color:#f7e9dd;font-size:13px;
+  padding:7px 16px;text-align:center;letter-spacing:.2px;
+}
+.notice-bar b{color:#ffd98a;font-weight:600}
+.site-header{
+  background:rgba(250,246,242,.96);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(6px);box-shadow:var(--shadow);
+}
+.header-inner{
+  max-width:1180px;margin:0 auto;padding:10px 18px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--main-deep);font-size:17px}
+.brand svg{flex:0 0 auto}
+.main-nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.main-nav a{
+  padding:6px 11px;border-radius:20px;font-size:14px;color:var(--ink-soft);
+  transition:background .18s,color .18s;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--bg-warm);color:var(--main-deep);text-decoration:none}
+.menu-btn{
+  display:none;margin-left:auto;background:var(--bg-card);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:14px;color:var(--ink);cursor:pointer;
+  font-family:var(--font);
+}
+.search-box{display:flex;align-items:center;gap:6px}
+.search-box input{
+  width:150px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;
+  font-family:var(--font);font-size:14px;background:#fff;color:var(--ink);
+}
+.search-box button{
+  background:var(--main);color:#fff;border:0;border-radius:8px;padding:7px 12px;
+  font-family:var(--font);font-size:14px;cursor:pointer;
+}
+.search-msg{font-size:13px;color:var(--main-deep);display:none;padding:0 18px 8px;max-width:1180px;margin:0 auto}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  max-width:1180px;margin:0 auto;padding:34px 18px 26px;
+  display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;
+}
+.hero-tag{
+  display:inline-block;background:var(--bg-warm);color:var(--main-deep);
+  font-size:13px;padding:3px 12px;border-radius:14px;margin-bottom:14px;letter-spacing:1px;
+}
+.hero h1{font-size:38px;letter-spacing:1px;margin-bottom:14px}
+.hero p{color:var(--ink-soft);margin:0 0 20px;font-size:16px;max-width:36em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:10px 22px;border-radius:24px;font-size:15px;
+  transition:transform .18s,box-shadow .18s;
+}
+.btn-primary{background:var(--main);color:#fff;box-shadow:0 4px 14px rgba(176,58,72,.28)}
+.btn-ghost{border:1px solid var(--main);color:var(--main-deep);background:transparent}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.hero-art{position:relative;height:300px}
+.hero-art svg{width:100%;height:100%}
+.hero-stats{display:flex;gap:26px;margin-top:24px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:var(--ink-soft)}
+.hero-stats strong{display:block;font-size:22px;color:var(--main-deep);font-weight:700}
+
+/* ---------- 布局 ---------- */
+.layout{
+  max-width:1180px;margin:0 auto;padding:0 18px 40px;
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;align-items:start;
+}
+main{min-width:0}
+.panel{
+  background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px;margin-bottom:28px;box-shadow:var(--shadow);
+}
+.panel h2{font-size:22px;margin-bottom:6px;color:var(--ink)}
+.sub{font-size:14px;color:var(--ink-soft);margin:0 0 18px}
+.kicker{font-size:12px;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:4px}
+
+/* 概览 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.overview-grid div{
+  background:var(--bg-warm);border-radius:8px;padding:14px 16px;font-size:14px;
+}
+.overview-grid b{display:block;color:var(--main-deep);font-size:15px;margin-bottom:2px}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:#fff;transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(90,50,40,.12)}
+.card img{width:100%;height:170px;object-fit:cover}
+.card-body{padding:14px 16px 16px}
+.card-body h3{font-size:16px;margin-bottom:6px}
+.card-body p{font-size:14px;color:var(--ink-soft);margin:0 0 10px}
+.meta{font-size:12px;color:#9a8a82;display:flex;gap:12px;flex-wrap:wrap}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;margin:0;padding:0}
+.tight-list li{
+  display:grid;grid-template-columns:78px 1fr auto;gap:12px;align-items:baseline;
+  padding:10px 0;border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.tight-list li:last-child{border-bottom:0}
+.tight-list time{color:#9a8a82;font-size:13px}
+.tight-list span.tag{
+  font-size:12px;background:var(--bg-warm);color:var(--main-deep);
+  padding:1px 8px;border-radius:10px;white-space:nowrap;
+}
+
+/* 分类标签索引 */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag-index a{
+  background:#fff;border:1px solid var(--line);border-radius:20px;
+  padding:7px 16px;font-size:14px;color:var(--ink-soft);
+}
+.tag-index a:hover{border-color:var(--main);color:var(--main-deep);text-decoration:none}
+
+/* 深度解析 */
+.deep h3{font-size:17.5px;margin:22px 0 8px;color:var(--main-deep)}
+.deep p{margin:0 0 12px;font-size:15.5px}
+.deep blockquote{
+  margin:16px 0;padding:12px 18px;border-left:4px solid var(--accent);
+  background:var(--bg-warm);border-radius:0 8px 8px 0;font-size:15px;color:var(--ink-soft);
+}
+.compare-table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0 16px}
+.compare-table th,.compare-table td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.compare-table th{background:var(--bg-warm);color:var(--main-deep);font-weight:600}
+.check-list{margin:0 0 14px;padding-left:20px;font-size:15px}
+.check-list li{margin-bottom:6px}
+
+/* 步骤 */
+.steps{counter-reset:step;list-style:none;padding:0;margin:0}
+.steps li{
+  position:relative;padding:0 0 18px 52px;font-size:15px;
+}
+.steps li::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;
+  background:var(--main);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;
+}
+.steps li b{display:block;margin-bottom:2px;color:var(--ink)}
+
+/* 时间线 */
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--line);padding-left:22px}
+.timeline li{position:relative;padding-bottom:16px;font-size:14.5px}
+.timeline li::before{
+  content:"";position:absolute;left:-28px;top:8px;width:10px;height:10px;
+  border-radius:50%;background:var(--accent);
+}
+.timeline time{display:block;font-size:12.5px;color:#9a8a82}
+
+/* 评论 */
+.comments{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.comments li{
+  background:var(--bg-warm);border-radius:10px;padding:14px 16px;font-size:14.5px;
+}
+.comments .who{font-size:13px;color:var(--main-deep);font-weight:600;margin-bottom:4px}
+.comments .who small{color:#9a8a82;font-weight:400;margin-left:8px}
+
+/* FAQ */
+details{
+  border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:#fff;
+}
+details summary{
+  cursor:pointer;padding:13px 16px;font-weight:600;font-size:15px;list-style:none;
+  display:flex;justify-content:space-between;gap:10px;align-items:center;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"＋";color:var(--main);font-size:16px}
+details[open] summary::after{content:"－"}
+details .a{padding:0 16px 15px;font-size:14.5px;color:var(--ink-soft)}
+
+/* 相关推荐 & 资讯 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:10px}
+.rec-tags a{
+  font-size:13.5px;border:1px solid var(--main);color:var(--main-deep);
+  border-radius:20px;padding:5px 14px;
+}
+.rec-tags a:hover{background:var(--main);color:#fff;text-decoration:none}
+.news-list{list-style:none;padding:0;margin:0}
+.news-list li{padding:11px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.news-list li:last-child{border-bottom:0}
+.news-list small{color:#9a8a82;margin-left:8px}
+
+/* 榜单 */
+.rank-list{list-style:none;padding:0;margin:0;counter-reset:rank}
+.rank-list li{
+  counter-increment:rank;display:grid;grid-template-columns:30px 1fr auto;gap:10px;
+  align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14.5px;
+}
+.rank-list li::before{
+  content:counter(rank);font-weight:700;color:var(--accent);font-size:17px;
+}
+.rank-list li:last-child{border-bottom:0}
+
+/* 侧栏 */
+aside .panel{padding:20px}
+.side-nav{list-style:none;padding:0;margin:0;font-size:14.5px}
+.side-nav li a{
+  display:block;padding:7px 12px;border-left:3px solid transparent;color:var(--ink-soft);
+}
+.side-nav li a:hover,.side-nav li a.current{
+  border-left-color:var(--main);color:var(--main-deep);background:var(--bg-warm);
+  text-decoration:none;border-radius:0 6px 6px 0;
+}
+.side-note{font-size:13.5px;color:var(--ink-soft);margin:0}
+.side-note b{color:var(--main-deep)}
+
+/* 页脚 */
+footer{
+  background:var(--main-deep);color:#f2e4d8;margin-top:20px;
+}
+.footer-inner{
+  max-width:1180px;margin:0 auto;padding:34px 18px 20px;
+  display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px;
+}
+footer h3{font-size:15px;margin-bottom:10px;color:#ffd98a}
+footer p,footer li,footer a{font-size:13.5px;color:#e8d5c8}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:6px}
+footer a:hover{color:#fff}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.18);text-align:center;
+  padding:14px 18px;font-size:12.5px;color:#d9c2b3;
+}
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:70;display:none;
+  background:var(--main);color:#fff;border:0;border-radius:50%;
+  width:44px;height:44px;font-size:18px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.22);
+}
+#toTop.show{display:block}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:26px}
+  .hero-art{height:200px;order:-1}
+  .hero h1{font-size:30px}
+  .layout{grid-template-columns:1fr}
+  aside{order:2}
+  .card-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .menu-btn{display:inline-block}
+  .main-nav{
+    display:none;width:100%;margin-left:0;flex-direction:column;gap:2px;
+    padding:6px 0 10px;
+  }
+  .main-nav.open{display:flex}
+  .search-box{width:100%;margin-left:0}
+  .search-box input{flex:1;width:auto}
+  .overview-grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+  .tight-list li{grid-template-columns:1fr;gap:2px}
+  .footer-inner{grid-template-columns:1fr}
+  .hero-stats{gap:18px}
+  .hero h1{font-size:26px}
+  .panel{padding:18px 16px}
+  .comment-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="notice-bar">
+    <b>尤果网模特写真</b> 更新：2026-11-06 上线「水手服·夏日学园」第 3 辑 <b>36 张</b>，11-03 补档「黑色旗袍·夜上海」24 张，11-01 新增画质分级说明
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#b03a48"/>
+          <circle cx="32" cy="23" r="9" fill="#f7e9dd"/>
+          <path d="M13 55c0-11.5 8.5-18.5 19-18.5S51 43.5 51 55z" fill="#f7e9dd"/>
+        </svg>
+        <span>尤果网模特写真</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">栏目 ▾</button>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选套装</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#category">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">挑选指南</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+      <div class="search-box">
+        <input type="search" id="siteSearch" placeholder="搜套装、模特、主题" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+    </div>
+    <div class="search-msg" id="searchMsg" role="status"></div>
+  </header>
+</div>
+
+<section class="hero" id="top">
+  <div>
+    <span class="hero-tag">人物写真 · 套装档案</span>
+    <h1>尤果网模特写真</h1>
+    <p>按主题、服装与拍摄场景归档的模特写真套装索引：水手服、旗袍、泳装、针织日常四大类共 9 个频道，每套标注张数、分辨率与拍摄日期，方便按构图和画质挑片。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/#featured">看本周精选套装</a>
+      <a class="btn btn-ghost" href="/#guide">按四步挑套装</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>186</strong>套归档套装</div>
+      <div><strong>9</strong>个主题频道</div>
+      <div><strong>4 800+</strong>张成片索引</div>
+    </div>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 420 300" role="presentation">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f3e9e1"/><stop offset="1" stop-color="#e6cfc4"/>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="420" height="300" rx="16" fill="url(#g1)"/>
+      <rect x="34" y="36" width="150" height="196" rx="12" fill="#fff" stroke="#d9c2b3"/>
+      <circle cx="109" cy="96" r="30" fill="#b03a48" opacity=".85"/>
+      <path d="M59 200c0-27 22-44 50-44s50 17 50 44z" fill="#b03a48" opacity=".55"/>
+      <rect x="214" y="58" width="172" height="90" rx="10" fill="#fff" stroke="#d9c2b3"/>
+      <rect x="230" y="76" width="90" height="8" rx="4" fill="#b03a48" opacity=".7"/>
+      <rect x="230" y="94" width="140" height="6" rx="3" fill="#c9b3a8"/>
+      <rect x="230" y="108" width="120" height="6" rx="3" fill="#c9b3a8"/>
+      <rect x="214" y="164" width="80" height="80" rx="10" fill="#fff" stroke="#d9c2b3"/>
+      <circle cx="254" cy="196" r="16" fill="#d9a441" opacity=".85"/>
+      <rect x="306" y="164" width="80" height="80" rx="10" fill="#fff" stroke="#d9c2b3"/>
+      <path d="M326 224l14-26 14 26z" fill="#b03a48" opacity=".6"/>
+      <rect x="34" y="248" width="352" height="8" rx="4" fill="#d9c2b3" opacity=".7"/>
+    </svg>
+  </div>
+</section>
+
+<div class="layout">
+  <main>
+
+    <!-- 1 领域概览 -->
+    <section class="panel" id="overview">
+      <div class="kicker">OVERVIEW</div>
+      <h2>领域概览：写真套装由哪些要素组成</h2>
+      <p class="sub">一套写真通常有五个可核对变量，看懂这五项，挑选时不必靠感觉。</p>
+      <div class="overview-grid">
+        <div><b>主题脚本</b>学园、旗袍街拍、泳池度假、居家针织，决定服装与场景的组合方向</div>
+        <div><b>成片张数</b>常见 18—48 张，同一套服装会出现近景、半身、全身三档构图</div>
+        <div><b>分辨率</b>长边 2000px 与 4000px 两档，后者适合大屏查看局部细节</div>
+        <div><b>灯光布置</b>自然光窗景、单灯反光板、双灯硬光，直接影响肤色与环境明暗关系</div>
+        <div><b>后期风格</b>低饱和胶片感、高对比杂志感、暖调生活感三种，色调并不随张数变化</div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="panel" id="featured">
+      <div class="kicker">PICKS</div>
+      <h2>精选内容推荐：本周四套可优先看的套装</h2>
+      <p class="sub">挑选标准是构图完整度与服装主题一致性，与更新先后无关。</p>
+      <div class="card-grid">
+        <article class="card">
+          <img src="https://picsum.photos/seed/ugoyou-sailor/640/340" width="640" height="340" loading="lazy" alt="水手服套装室内窗边半身构图" style="object-fit:cover">
+          <div class="card-body">
+            <h3>水手服·夏日学园 第 3 辑</h3>
+            <p>36 张，长边 4000px，室内窗景自然光。前 12 张统一白墙背景，后 24 张加入课桌与黑板道具，构图层次更完整。</p>
+            <div class="meta"><span>11-06 上线</span><span>自然光</span><span>36 张</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/ugoyou-qipao/640/340" width="640" height="340" loading="lazy" alt="黑色旗袍街拍全身构图" style="object-fit:cover">
+          <div class="card-body">
+            <h3>黑色旗袍·夜上海 补档</h3>
+            <p>24 张，双灯硬光配石板路夜景。旗袍开衩高度与灯位角度经过两次调整，全身构图占比约三分之二。</p>
+            <div class="meta"><span>11-03 补档</span><span>双灯硬光</span><span>24 张</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/ugoyou-pool/640/340" width="640" height="340" loading="lazy" alt="泳池边泳装写真半身构图" style="object-fit:cover">
+          <div class="card-body">
+            <h3>泳池度假·蓝白条纹</h3>
+            <p>28 张，午后 2 点至 4 点拍摄，水面反光形成补光。近景与全身各占一半，色调偏冷。</p>
+            <div class="meta"><span>10-29 上线</span><span>自然光</span><span>28 张</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://picsum.photos/seed/ugoyou-knit/640/340" width="640" height="340" loading="lazy" alt="针织居家写真坐姿构图" style="object-fit:cover">
+          <div class="card-body">
+            <h3>针织居家·午后沙发</h3>
+            <p>20 张，单灯加反光板，米白与燕麦色为主。坐姿与半躺构图为主，适合看服装褶皱与布光细节。</p>
+            <div class="meta"><span>10-27 上线</span><span>单灯</span><span>20 张</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="panel" id="latest">
+      <div class="kicker">UPDATES</div>
+      <h2>最新更新：近十天的套装与说明变动</h2>
+      <p class="sub">只记录发布、补档、说明修订三类动作，日期为归档日期。</p>
+      <ul class="tight-list">
+        <li><time>11-06</time><span>水手服·夏日学园 第 3 辑上线，36 张，长边 4000px</span><span class="tag">新增</span></li>
+        <li><time>11-05</time><span>泳池度假·蓝白条纹补充第 2 组全身构图 8 张</span><span class="tag">补档</span></li>
+        <li><time>11-03</time><span>黑色旗袍·夜上海补入 24 张，替换早期 18 张版本</span><span class="tag">补档</span></li>
+        <li><time>11-01</time><span>画质分级说明更新：长边 2000px 与 4000px 两档判定口径</span><span class="tag">修订</span></li>
+        <li><time>10-30</time><span>针织居家·午后沙发新增布光示意一节</span><span class="tag">修订</span></li>
+        <li><time>10-29</time><span>泳池度假·蓝白条纹上线，28 张</span><span class="tag">新增</span></li>
+        <li><time>10-27</time><span>针织居家·午后沙发上线，20 张</span><span class="tag">新增</span></li>
+        <li><time>10-24</time><span>学园制服类目拆分为水手服与衬衫西裤两个频道</span><span class="tag">修订</span></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="panel" id="category">
+      <div class="kicker">CATEGORY</div>
+      <h2>分类入口：按服装与场景找套装</h2>
+      <p class="sub">同一套服装在不同场景下会归入不同频道，入口名称即检索词。</p>
+      <div class="tag-index">
+        <a href="/#featured">水手服写真</a>
+        <a href="/#featured">旗袍街拍</a>
+        <a href="/#featured">泳装度假</a>
+        <a href="/#featured">针织居家</a>
+        <a href="/#featured">衬衫西裤制服</a>
+        <a href="/#featured">白裙窗景</a>
+        <a href="/#featured">夜景硬光</a>
+        <a href="/#featured">胶片低饱和</a>
+        <a href="/#featured">全身构图专集</a>
+        <a href="/#featured">高分辨率精选</a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析（唯一主体阅读区） -->
+    <section class="panel deep" id="deep">
+      <div class="kicker">ANALYSIS</div>
+      <h2>深度解析：套装质量的分水岭在灯位，不在张数</h2>
+      <p>同一模特、同一服装，成片差距的主要来源是灯位与机位，而不是拍摄张数。把 10 月 20 日至 11 月 6 日的六套新片按灯位归类，差距立刻显现。</p>
+
+      <h3>灯位对照：三套双灯硬光与三套自然光的成片差异</h3>
+      <table class="compare-table">
+        <thead>
+          <tr><th>套装</th><th>灯位</th><th>张数</th><th>可核对差异</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>黑色旗袍·夜上海</td><td>双灯硬光</td><td>24</td><td>面部高光与背景分离明显，旗袍面料反光可辨</td></tr>
+          <tr><td>水手服·夏日学园 第 3 辑</td><td>自然光窗景</td><td>36</td><td>肤色过渡柔和，白墙背景局部过曝约 1 档</td></tr>
+          <tr><td>针织居家·午后沙发</td><td>单灯反光板</td><td>20</td><td>明暗过渡最平稳，褶皱阴影层次最多</td></tr>
+        </tbody>
+      </table>
+      <p>张数多的套装未必成片稳定。36 张的水手服在后 24 张加入道具后，背景亮度变化导致白平衡出现偏暖，逐张查看能看出色温差；24 张的旗袍因为灯位固定，整组色调一致性反而更高。</p>
+
+      <h3>分辨率说法差异：4000px 不等于细节更多</h3>
+      <p>11-01 修订的画质说明把长边 4000px 定为高清档，但实际观感还取决于镜头与压缩。同一套泳池度假作品，原始长边 4000px 转存后约 2.8MB，放大到 200% 时水花边缘出现涂抹；另一套长边 2000px 但压缩率低的针织居家，局部锐度反而更干净。判断依据应写成两条：长边像素、单张体积。</p>
+
+      <blockquote>可被反驳的判断：对普通屏幕查看而言，2000px 长边的成片价值不低于 4000px；只有需要裁切或打印时，高像素档才有明确优势。若在 27 英寸 4K 屏上整屏查看，两者的差距小于色调一致性带来的差距。</blockquote>
+
+      <h3>说法前后变化：学园制服频道的拆分逻辑</h3>
+      <p>10-24 之前，水手服与衬衫西裤同属一个频道，检索时两类混排；拆分后水手服单列，衬衫西裤补入 6 套。拆分理由是服装版型差异影响构图比例：水手服领口位置高，半身构图通常在腰线以上截断；衬衫西裤更常用全身构图。这条规则可以在现有 9 个频道的封面构图比例上逐一套用核对。</p>
+
+      <h3>把判断拆成可核对的结构</h3>
+      <ul class="check-list">
+        <li><b>看灯位：</b>面部与背景是否有明确亮度差，硬光看阴影边缘是否清晰。</li>
+        <li><b>看白平衡：</b>连续翻 5 张，白墙或石板路是否同一色温。</li>
+        <li><b>看构图重复：</b>全身构图超过八成时，查看是否有景别变化。</li>
+        <li><b>看压缩：</b>记录单张体积，低于 1MB 的 4000px 成片需谨慎。</li>
+        <li><b>看服装细节：</b>蕾丝、织纹、纽扣是否可辨，作为锐度参照物。</li>
+      </ul>
+      <p>推测部分需要标明：11-05 泳池补入的 8 张全身构图，与 10-29 首发时的机位高度不同，可能来自补拍而非重新筛选；至今没有拍摄记录公开，这条只能算推测。</p>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="panel" id="guide">
+      <div class="kicker">GUIDE</div>
+      <h2>体验指南：四步挑到合用的写真套装</h2>
+      <p class="sub">顺序有讲究，先定主题再看画质，避免把时间花在翻页上。</p>
+      <ol class="steps">
+        <li><b>先定服装主题。</b>水手服、旗袍、泳装、针织四类各看一套代表，确认自己喜欢的是服装还是场景氛围。</li>
+        <li><b>再查灯位与色温。</b>翻前三张与最后三张，色温漂移明显的套装直接跳过。</li>
+        <li><b>核对像素与体积。</b>记录长边与单张体积两个数字，二者任一偏低都要降低预期。</li>
+        <li><b>最后看构图多样性。</b>近景、半身、全身三档是否齐全，全是一个景别的套装翻看容易疲劳。</li>
+      </ol>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="panel" id="faq">
+      <div class="kicker">FAQ</div>
+      <h2>常见问题：关于模特写真套装的疑问</h2>
+      <p class="sub">答案围绕套装本身，涉及时点已标注日期。</p>
+      <details>
+        <summary>水手服写真的半身构图为什么多在腰线以上截断？</summary>
+        <div class="a">水手服领口与披肩位置较高，腰线以上截断能保留领型与袖口两个识别点；截到胯部以下时，上衣比例被压缩，视觉重心会落到裙褶。11-06 上线的第 3 辑前 12 张均按此规则取景。</div>
+      </details>
+      <details>
+        <summary>旗袍街拍常用的双灯硬光，对肤色呈现有什么影响？</summary>
+        <div class="a">双灯硬光压低了环境明暗差，面部高光边界清晰，肤色偏中性；代价是鼻翼与下颌阴影较硬。黑色旗袍·夜上海 24 张里，有 6 张通过降低副灯输出缓和了阴影。</div>
+      </details>
+      <details>
+        <summary>泳装度假套装的冷色调是拍摄时定的还是后期调出来的？</summary>
+        <div class="a">多在水面反光与白平衡设定阶段形成。泳池度假·蓝白条纹拍摄于午后 2 点至 4 点，水面反光作为自然补光，冷调在机内白平衡阶段已基本确定，后期仅做轻微统一。</div>
+      </details>
+      <details>
+        <summary>长边 2000px 的成片在大屏上真的不够看吗？</summary>
+        <div class="a">取决于查看比例。整屏显示时 2000px 长边足够；放大到 200% 看织纹与睫毛细节时，4000px 才有优势。两者差距在色调不一致的套装里会被放大。</div>
+      </details>
+      <details>
+        <summary>针织居家写真适合看哪些细节？</summary>
+        <div class="a">看布光与面料两层。单灯加反光板的明暗过渡最平稳，褶皱阴影层次多；米白与燕麦色在暖调下容易过曝，需要对照纽扣与织纹是否仍可分辨。</div>
+      </details>
+      <details>
+        <summary>同一个模特在不同服装主题下的构图会变化吗？</summary>
+        <div class="a">会，主要由服装版型决定。水手服偏半身，旗袍偏全身，泳装偏近景与侧身。10-27 至 11-06 的四套新片可在封面构图上直接对比这一差别。</div>
+      </details>
+    </section>
+
+    <!-- 8 用户评论 -->
+    <section class="panel" id="comments">
+      <div class="kicker">COMMENTS</div>
+      <h2>用户评论：来自套装档案的读者反馈</h2>
+      <p class="sub">保留原话语气，含中性评价与具体指摘。</p>
+      <ul class="comments">
+        <li>
+          <div class="who">阿棠 <small>11-06</small></div>
+          水手服第 3 辑前 12 张白墙背景确实干净，但后 24 张加课桌之后色温偏暖，翻到第 20 张左右明显。希望下一辑把两组分开归档。
+        </li>
+        <li>
+          <div class="who">林间一页 <small>11-05</small></div>
+          旗袍那套的双灯硬光很对味，旗袍面料的暗纹能看清。缺点是石板路夜景那张高光溢出，路灯位置太抢。
+        </li>
+        <li>
+          <div class="who">匿名 <small>11-04</small></div>
+          针织居家只有 20 张，但每张都能看出布光在调整，比张数多的套装耐看。就是分类名“针织居家”太笼统，搜的时候容易漏。
+        </li>
+        <li>
+          <div class="who">老周 <small>11-02</small></div>
+          泳池补的 8 张全身构图机位比首发高，看着不像同一次拍的。色调还统一，但水花位置不一样。
+        </li>
+        <li>
+          <div class="who">小满 <small>10-31</small></div>
+          画质说明改过之后清楚多了，之前只看长边像素，不知道还要看单张体积。现在两栏一起看，踩坑少。
+        </li>
+      </ul>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="panel" id="news">
+      <div class="kicker">NEWS</div>
+      <h2>相关资讯：写真归档与画质说明的动态</h2>
+      <ul class="news-list">
+        <li>学园制服频道 10-24 拆分完成，水手服与衬衫西裤分列，补入衬衫西裤 6 套<small>10-24</small></li>
+        <li>画质分级说明 11-01 修订，明确长边像素与单张体积双指标<small>11-01</small></li>
+        <li>旗袍街拍频道累计 41 套，夜景硬光类占 17 套<small>11-03</small></li>
+        <li>泳池度假系列补入 8 张全身构图，机位高度与首发不同<small>11-05</small></li>
+      </ul>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="panel" id="related">
+      <div class="kicker">RELATED</div>
+      <h2>相关推荐：继续查看的套装与说明</h2>
+      <p class="sub">按当前阅读路径给出的下一站入口。</p>
+      <div class="rec-tags">
+        <a href="/#featured">水手服写真套装清单</a>
+        <a href="/#featured">旗袍街拍夜景推荐</a>
+        <a href="/#featured">泳装度假近景合集</a>
+        <a href="/#guide">写真灯位判断四步法</a>
+        <a href="/#deep">分辨率与成片体积对照</a>
+        <a href="/#latest">近十天补档记录</a>
+        <a href="/#faq">构图景别常见问题</a>
+      </div>
+    </section>
+
+    <!-- 11 补充板块：可信度分层榜单 -->
+    <section class="panel" id="rank">
+      <div class="kicker">RANK</div>
+      <h2>套装可信度分层：按可核对信息排的一组榜单</h2>
+      <p class="sub">分层依据是拍摄记录、灯位说明、色温一致性三项是否齐全，不评模特表现。</p>
+      <ol class="rank-list">
+        <li><span>针织居家·午后沙发</span><span>三项齐全</span></li>
+        <li><span>黑色旗袍·夜上海</span><span>缺拍摄记录</span></li>
+        <li><span>水手服·夏日学园 第 3 辑</span><span>色温有漂移</span></li>
+        <li><span>泳池度假·蓝白条纹</span><span>补档机位待说明</span></li>
+        <li><span>白裙窗景·晨光</span><span>仅 12 张，说明简略</span></li>
+      </ol>
+    </section>
+
+    <!-- 12 时间线补充 -->
+    <section class="panel" id="timeline">
+      <div class="kicker">TIMELINE</div>
+      <h2>套装档案时间线：十月的四次补档</h2>
+      <ul class="timeline">
+        <li><time>10-24</time>学园制服频道拆分，水手服与衬衫西裤分列</li>
+        <li><time>10-27</time>针织居家·午后沙发上线，单灯反光板布光</li>
+        <li><time>10-29</time>泳池度假·蓝白条纹上线，28 张</li>
+        <li><time>11-03</time>黑色旗袍·夜上海补档至 24 张</li>
+        <li><time>11-06</time>水手服·夏日学园 第 3 辑上线，36 张</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside>
+    <div class="panel">
+      <h3 style="font-size:15px;margin-bottom:10px;color:var(--main-deep)">频道导航</h3>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选套装</a></li>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#category">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">挑选指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#rank">可信度分层</a></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3 style="font-size:15px;margin-bottom:10px;color:var(--main-deep)">档案速览</h3>
+      <p class="side-note">当前归档 <b>186</b> 套，其中 10-08 至 11-06 新增 <b>11</b> 套。水手服类 23 套，旗袍类 41 套，泳装类 29 套，针织居家类 18 套，其余并入综合场景。所有套装标注长边像素与单张体积，可对照查看。</p>
+    </div>
+    <div class="panel">
+      <h3 style="font-size:15px;margin-bottom:10px;color:var(--main-deep)">更新时间</h3>
+      <p class="side-note">页脚时间对应 11-06 上线的水手服第 3 辑与 11-03 旗袍补档，正文「最新更新」逐条可核。</p>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>尤果网模特写真</h3>
+      <p>按服装与场景归档的模特写真套装索引，标注张数、分辨率、灯位与拍摄日期，帮助按构图与画质挑片。</p>
+    </div>
+    <div>
+      <h3>栏目</h3>
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选套装</a></li>
+        <li><a href="/#category">分类入口</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>说明</h3>
+      <ul>
+        <li>示例数据：套装张数、分辨率、日期为归档示例</li>
+        <li>图片为示意占位，非原始成片</li>
+        <li>更新记录截至 2026-11-08</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 尤果网模特写真 · 内容归档示例 · 更新于 2026-11-08</div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  if(menuBtn && mainNav){
+    menuBtn.addEventListener('click', function(){
+      var open = mainNav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mainNav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 640){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 420){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  var searchInput = document.getElementById('siteSearch');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchMsg = document.getElementById('searchMsg');
+
+  function doSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){ searchMsg.style.display = 'none'; return; }
+    var blocks = document.querySelectorAll('main section');
+    var hits = [];
+    blocks.forEach(function(sec){
+      if(sec.textContent.indexOf(q) !== -1){
+        var h = sec.querySelector('h2');
+        hits.push(h ? h.textContent.split('：')[0] : sec.id);
+      }
+    });
+    searchMsg.style.display = 'block';
+    if(hits.length){
+      searchMsg.innerHTML = '找到 ' + hits.length + ' 个相关栏目：' +
+        hits.map(function(t){ return '「' + t + '」'; }).join('、');
+    } else {
+      searchMsg.textContent = '没有找到与「' + q + '」相关的套装或说明，试试“水手服”“旗袍”“灯位”“分辨率”。';
+    }
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  var sideLinks = document.querySelectorAll('#sideNav a');
+  var sections = [];
+  sideLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    var el = document.getElementById(id);
+    if(el) sections.push({el: el, link: a});
+  });
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          sideLinks.forEach(function(l){ l.classList.remove('current'); });
+          sections.forEach(function(s){
+            if(s.el === en.target) s.link.classList.add('current');
+          });
+        }
+      });
+    }, {rootMargin:'-120px 0px -60% 0px'});
+    sections.forEach(function(s){ obs.observe(s.el); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "尤果网模特写真",
+  "description": "按主题、服装与场景归档的模特写真套装索引，标注张数、分辨率、灯位与拍摄日期。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "水手服写真的半身构图为什么多在腰线以上截断？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "水手服领口与披肩位置较高，腰线以上截断能保留领型与袖口两个识别点；截到胯部以下时上衣比例被压缩，视觉重心会落到裙褶。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "旗袍街拍常用的双灯硬光，对肤色呈现有什么影响？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "双灯硬光压低环境明暗差，面部高光边界清晰，肤色偏中性；代价是鼻翼与下颌阴影较硬。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "泳装度假套装的冷色调是拍摄时定的还是后期调出来的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多在水面反光与白平衡设定阶段形成，午后拍摄时水面反光作为自然补光，冷调在机内白平衡阶段基本确定。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "长边 2000px 的成片在大屏上真的不够看吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "取决于查看比例。整屏显示时 2000px 长边足够，放大到 200% 看织纹与睫毛细节时 4000px 才有优势。"
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
