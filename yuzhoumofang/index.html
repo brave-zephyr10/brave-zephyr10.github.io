@@ -1,0 +1,1458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宇宙魔方 - 原创科幻影像品牌 - 探索未知的每一帧</title>
+<meta name="description" content="宇宙魔方官方网站，深耕原创科幻影像领域的视频品牌，汇聚创作者与天文爱好者，共建高品质内容生态。">
+<style>
+  :root{
+    --bg:#070b14;
+    --bg2:#0c1424;
+    --panel:#101a2e;
+    --panel2:#16233c;
+    --line:rgba(120,160,255,.16);
+    --line2:rgba(120,160,255,.28);
+    --text:#e8eefc;
+    --muted:#93a3c4;
+    --dim:#66759a;
+    --cyan:#3fd6ff;
+    --violet:#8a6bff;
+    --pink:#ff5fa2;
+    --lime:#b8ff4f;
+    --glow:0 0 24px rgba(63,214,255,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(138,107,255,.18), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(63,214,255,.14), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:min(1180px,92vw);margin:0 auto}
+  ::selection{background:rgba(138,107,255,.45)}
+
+  /* ===== 吸顶公告 + 页头 ===== */
+  .topbar{
+    position:sticky;top:0;z-index:60;
+    background:linear-gradient(90deg,#0a1020 0%,#101a30 50%,#0a1020 100%);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(10px);
+  }
+  .notice{
+    display:flex;align-items:center;gap:14px;
+    font-size:13px;color:#cfe4ff;
+    padding:9px 0;
+    overflow:hidden;
+  }
+  .notice .tag{
+    flex:0 0 auto;
+    background:linear-gradient(135deg,var(--cyan),var(--violet));
+    color:#04101c;font-weight:800;font-size:12px;
+    padding:2px 10px;border-radius:99px;letter-spacing:1px;
+  }
+  .notice marquee{flex:1 1 auto;min-width:0}
+  .notice b{color:var(--lime);font-weight:700}
+  header.site{
+    border-bottom:1px solid var(--line);
+    background:rgba(8,13,24,.82);
+    backdrop-filter:blur(14px);
+  }
+  .navbar{display:flex;align-items:center;gap:24px;padding:14px 0;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:.5px}
+  .logo-mark{
+    width:38px;height:38px;border-radius:11px;position:relative;
+    background:conic-gradient(from 200deg,var(--cyan),var(--violet),var(--pink),var(--cyan));
+    box-shadow:var(--glow);
+    display:grid;place-items:center;
+  }
+  .logo-mark::after{
+    content:"";width:16px;height:16px;background:#070b14;border-radius:5px;
+    box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);
+    transform:rotate(45deg);
+  }
+  .logo small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:3px}
+  nav.mainnav{display:flex;gap:4px;flex:1 1 auto;flex-wrap:wrap}
+  nav.mainnav a{
+    font-size:14px;color:var(--muted);padding:8px 13px;border-radius:9px;
+    transition:.22s;position:relative;
+  }
+  nav.mainnav a:hover{color:var(--text);background:rgba(120,160,255,.1)}
+  nav.mainnav a.active{color:#04101c;background:linear-gradient(135deg,var(--cyan),var(--violet));font-weight:700}
+  .searchbox{
+    display:flex;align-items:center;gap:8px;
+    background:rgba(120,160,255,.08);border:1px solid var(--line2);
+    border-radius:99px;padding:7px 8px 7px 14px;min-width:210px;
+  }
+  .searchbox input{
+    background:transparent;border:0;outline:0;color:var(--text);
+    font-size:13px;width:120px;font-family:inherit;
+  }
+  .searchbox input::placeholder{color:var(--dim)}
+  .searchbox button{
+    border:0;cursor:pointer;font-family:inherit;
+    background:linear-gradient(135deg,var(--cyan),var(--violet));
+    color:#04101c;font-weight:800;font-size:12px;
+    padding:6px 14px;border-radius:99px;transition:.2s;
+  }
+  .searchbox button:hover{filter:brightness(1.12)}
+  .search-hint{
+    display:none;position:absolute;margin-top:8px;font-size:12px;
+    background:var(--panel2);border:1px solid var(--line2);border-radius:10px;
+    padding:8px 12px;color:var(--cyan);z-index:70;
+  }
+  .burger{
+    display:none;background:rgba(120,160,255,.1);border:1px solid var(--line2);
+    color:var(--text);border-radius:9px;padding:8px 12px;font-size:16px;cursor:pointer;
+  }
+
+  /* ===== 通用 section ===== */
+  section{padding:74px 0;scroll-margin-top:118px}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+  .eyebrow{
+    font-size:12px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;
+    display:flex;align-items:center;gap:9px;margin-bottom:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+  h2{font-size:clamp(22px,2.6vw,32px);letter-spacing:.5px;line-height:1.35}
+  h2 em{font-style:normal;background:linear-gradient(120deg,var(--cyan),var(--violet) 60%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sec-head p{color:var(--muted);font-size:14px;max-width:520px}
+  h3{font-size:16px;line-height:1.5}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;
+    border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;border:1px solid transparent;
+    transition:.24s;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#04101c;box-shadow:0 8px 28px rgba(63,214,255,.25)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(63,214,255,.4)}
+  .btn-ghost{border-color:var(--line2);color:var(--text);background:rgba(120,160,255,.06)}
+  .btn-ghost:hover{background:rgba(120,160,255,.14);border-color:var(--cyan)}
+  .btn-sm{padding:7px 16px;font-size:12px}
+
+  /* ===== 首屏 ===== */
+  .hero{position:relative;padding:64px 0 78px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;
+    background:radial-gradient(ellipse at 50% 100%,rgba(138,107,255,.22),transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:6fr 4fr;gap:46px;align-items:center;position:relative}
+  .hero h1{
+    font-size:clamp(38px,6.4vw,74px);line-height:1.05;letter-spacing:2px;
+    font-weight:900;margin-bottom:18px;
+  }
+  .hero h1 span{
+    background:linear-gradient(120deg,#fff 0%,var(--cyan) 42%,var(--violet) 72%,var(--pink));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 26px rgba(63,214,255,.3));
+  }
+  .hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .badge{
+    font-size:12px;padding:5px 13px;border-radius:99px;border:1px solid var(--line2);
+    color:var(--muted);background:rgba(120,160,255,.06);
+  }
+  .badge.hot{color:#04101c;background:linear-gradient(135deg,var(--lime),var(--cyan));border-color:transparent;font-weight:800}
+  .hero .lead{color:#c3d0ea;font-size:15.5px;margin-bottom:26px;max-width:560px}
+  .hero .lead strong{color:var(--cyan);font-weight:700}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:520px}
+  .stat{
+    background:linear-gradient(160deg,rgba(120,160,255,.1),rgba(120,160,255,.02));
+    border:1px solid var(--line);border-radius:16px;padding:16px 14px;position:relative;overflow:hidden;
+  }
+  .stat::after{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--cyan),transparent)}
+  .stat b{display:block;font-size:26px;line-height:1.2;letter-spacing:.5px;
+    background:linear-gradient(120deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{font-size:12px;color:var(--dim);letter-spacing:1px}
+
+  .hero-visual{position:relative}
+  .cube-frame{
+    position:relative;border-radius:24px;overflow:hidden;
+    border:1px solid var(--line2);
+    box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 60px rgba(138,107,255,.16);
+    aspect-ratio:4/4.6;background:var(--panel);
+  }
+  .cube-frame img{width:100%;height:100%;object-fit:cover}
+  .cube-frame .play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:74px;height:74px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(7,11,20,.55);border:1.5px solid rgba(63,214,255,.7);
+    backdrop-filter:blur(6px);cursor:pointer;transition:.25s;
+  }
+  .cube-frame .play:hover{transform:translate(-50%,-50%) scale(1.1);box-shadow:0 0 34px rgba(63,214,255,.6)}
+  .cube-frame .play::after{
+    content:"";border-style:solid;border-width:11px 0 11px 17px;
+    border-color:transparent transparent transparent #fff;margin-left:5px;
+  }
+  .floating-chip{
+    position:absolute;background:rgba(10,17,31,.9);border:1px solid var(--line2);
+    border-radius:12px;padding:9px 14px;font-size:12px;color:var(--muted);
+    backdrop-filter:blur(8px);box-shadow:0 10px 26px rgba(0,0,0,.5);
+  }
+  .floating-chip b{color:var(--lime);display:block;font-size:15px;letter-spacing:.5px}
+  .fc1{left:-16px;top:22%}
+  .fc2{right:-14px;bottom:16%}
+
+  /* ===== 视频卡片通用 ===== */
+  .cover{
+    position:relative;overflow:hidden;border-radius:14px;aspect-ratio:16/9;
+    background:var(--panel2);
+  }
+  .cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .cover img{transform:scale(1.06)}
+  .cover::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(4,8,16,.82));
+    pointer-events:none;
+  }
+  .cover .tri{
+    position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:46px;height:46px;border-radius:50%;background:rgba(7,11,20,.55);
+    border:1px solid rgba(255,255,255,.55);display:grid;place-items:center;
+    opacity:.9;transition:.25s;
+  }
+  .cover .tri::after{content:"";border-style:solid;border-width:7px 0 7px 11px;border-color:transparent transparent transparent #fff;margin-left:3px}
+  .card:hover .cover .tri{background:linear-gradient(135deg,var(--cyan),var(--violet));border-color:transparent;transform:translate(-50%,-50%) scale(1.12)}
+  .cover .dur{
+    position:absolute;z-index:3;right:9px;bottom:9px;font-size:11px;
+    background:rgba(4,8,16,.82);padding:2px 8px;border-radius:6px;color:#dbe7ff;
+  }
+  .cover .cat{
+    position:absolute;z-index:3;left:9px;top:9px;font-size:11px;font-weight:700;
+    padding:3px 9px;border-radius:6px;color:#04101c;
+    background:linear-gradient(135deg,var(--cyan),var(--lime));
+  }
+
+  /* 焦点视频 */
+  .focus-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px}
+  .focus-main{
+    border:1px solid var(--line);border-radius:20px;padding:18px;background:rgba(120,160,255,.04);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .focus-main .cover{aspect-ratio:16/8.6}
+  .focus-side{display:grid;grid-template-rows:repeat(4,1fr);gap:14px}
+  .mini{
+    display:grid;grid-template-columns:128px 1fr;gap:13px;align-items:center;
+    border:1px solid var(--line);border-radius:14px;padding:10px;
+    background:rgba(120,160,255,.03);transition:.24s;
+  }
+  .mini:hover{border-color:var(--cyan);background:rgba(63,214,255,.06);transform:translateX(3px)}
+  .mini .cover{aspect-ratio:16/10;border-radius:10px}
+  .mini h3{font-size:14px;line-height:1.45}
+  .mini p{font-size:11.5px;color:var(--dim);margin-top:4px}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--dim);align-items:center}
+  .meta-row .dot{width:4px;height:4px;border-radius:50%;background:var(--dim)}
+  .card-title{font-size:17px;font-weight:700;line-height:1.45;transition:.2s}
+  .card:hover .card-title{color:var(--cyan)}
+  .card-desc{font-size:13px;color:var(--muted);margin-top:7px}
+  .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
+  .tag{
+    font-size:11px;padding:3px 10px;border-radius:99px;
+    border:1px solid var(--line2);color:var(--muted);background:rgba(120,160,255,.05);
+  }
+  .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}
+  .act{
+    display:inline-flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;
+    padding:5px 11px;border-radius:99px;border:1px solid var(--line);color:var(--muted);
+    background:transparent;font-family:inherit;transition:.2s;
+  }
+  .act:hover{color:var(--text);border-color:var(--cyan);background:rgba(63,214,255,.08)}
+  .act.liked{color:var(--pink);border-color:rgba(255,95,162,.55);background:rgba(255,95,162,.1)}
+  .act.saved{color:var(--lime);border-color:rgba(184,255,79,.5);background:rgba(184,255,79,.08)}
+
+  /* 视频流 */
+  .stream{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{
+    border:1px solid var(--line);border-radius:18px;padding:14px;
+    background:linear-gradient(170deg,rgba(120,160,255,.055),rgba(120,160,255,.012));
+    transition:.28s;display:flex;flex-direction:column;
+  }
+  .card:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 22px 48px rgba(0,0,0,.5)}
+  .card .body{padding:13px 3px 3px;display:flex;flex-direction:column;flex:1 1 auto}
+
+  /* 专题 */
+  .topics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .topic{
+    position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    min-height:220px;display:flex;align-items:flex-end;padding:18px;transition:.28s;
+  }
+  .topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .6s}
+  .topic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,8,16,.1),rgba(4,8,16,.92));z-index:1}
+  .topic:hover img{transform:scale(1.07)}
+  .topic:hover{border-color:var(--cyan)}
+  .topic .inner{position:relative;z-index:2}
+  .topic .state{font-size:11px;color:var(--lime);border:1px solid rgba(184,255,79,.4);border-radius:99px;padding:2px 9px;display:inline-block;margin-bottom:8px}
+  .topic h3{font-size:17px;margin-bottom:6px}
+  .topic p{font-size:12.5px;color:#b6c4e0}
+
+  /* 创作者 */
+  .creators{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .creator{
+    border:1px solid var(--line);border-radius:18px;padding:20px 16px;text-align:center;
+    background:linear-gradient(175deg,rgba(120,160,255,.07),rgba(120,160,255,.015));
+    transition:.26s;cursor:pointer;
+  }
+  .creator:hover{border-color:var(--violet);transform:translateY(-5px);box-shadow:0 18px 40px rgba(138,107,255,.2)}
+  .avatar{
+    width:64px;height:64px;border-radius:50%;margin:0 auto 13px;display:grid;place-items:center;
+    font-size:23px;font-weight:800;color:#04101c;letter-spacing:1px;
+    box-shadow:0 0 0 3px rgba(7,11,20,1),0 0 0 4px var(--line2);
+  }
+  .creator h3{font-size:15px}
+  .creator .field{font-size:12px;color:var(--cyan);margin:5px 0 9px;letter-spacing:.5px}
+  .creator p{font-size:12.5px;color:var(--muted);line-height:1.65}
+  .creator .nums{display:flex;justify-content:center;gap:16px;margin-top:13px;font-size:11px;color:var(--dim)}
+  .creator .nums b{display:block;color:var(--text);font-size:14px}
+
+  /* 影像墙 */
+  .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-rows:120px}
+  .wall figure{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);transition:.28s}
+  .wall figure img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+  .wall figure:hover img{transform:scale(1.08)}
+  .wall figure:hover{border-color:var(--cyan)}
+  .wall figcaption{
+    position:absolute;inset:auto 0 0 0;padding:22px 11px 9px;font-size:12px;
+    background:linear-gradient(180deg,transparent,rgba(4,8,16,.94));color:#dbe7ff;
+  }
+  .w-big{grid-column:span 3;grid-row:span 2}
+  .w-mid{grid-column:span 2;grid-row:span 2}
+  .w-sm{grid-column:span 1;grid-row:span 1}
+  .w-wide{grid-column:span 2;grid-row:span 1}
+
+  /* 评价 */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .quote{
+    border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;
+    background:rgba(120,160,255,.035);transition:.24s;
+  }
+  .quote:hover{border-color:var(--line2);background:rgba(120,160,255,.07)}
+  .quote::before{
+    content:"“";position:absolute;top:2px;right:16px;font-size:52px;line-height:1;
+    color:rgba(138,107,255,.32);font-family:Georgia,serif;
+  }
+  .quote p{font-size:13.5px;color:#c6d3ec;line-height:1.8}
+  .quote .who{display:flex;align-items:center;gap:10px;margin-top:15px}
+  .quote .who .av{
+    width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+    font-size:13px;font-weight:800;color:#04101c;flex:0 0 auto;
+  }
+  .quote .who b{font-size:12.5px;display:block}
+  .quote .who span{font-size:11px;color:var(--dim)}
+
+  /* 动态 + FAQ */
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start}
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--cyan),rgba(138,107,255,.2))}
+  .tl-item{position:relative;padding-bottom:22px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{
+    content:"";position:absolute;left:-24px;top:7px;width:9px;height:9px;border-radius:50%;
+    background:var(--cyan);box-shadow:0 0 0 4px rgba(63,214,255,.16);
+  }
+  .tl-item time{font-size:11.5px;color:var(--cyan);letter-spacing:1px}
+  .tl-item h3{font-size:15px;margin:4px 0 5px}
+  .tl-item p{font-size:12.8px;color:var(--muted)}
+  details{
+    border:1px solid var(--line);border-radius:12px;padding:2px 16px;margin-bottom:10px;
+    background:rgba(120,160,255,.035);transition:.22s;
+  }
+  details[open]{border-color:var(--line2);background:rgba(120,160,255,.07)}
+  summary{
+    cursor:pointer;font-size:14px;font-weight:700;padding:13px 0;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"＋";color:var(--cyan);font-size:16px;transition:.2s}
+  details[open] summary::after{content:"－"}
+  details p{font-size:13px;color:var(--muted);padding:0 0 14px;line-height:1.8}
+
+  /* 合作墙 */
+  .partners{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .partner{
+    border:1px solid var(--line);border-radius:12px;padding:18px 10px;text-align:center;
+    font-size:12.5px;color:var(--muted);letter-spacing:1px;transition:.22s;
+    background:rgba(120,160,255,.03);
+  }
+  .partner:hover{color:var(--text);border-color:var(--cyan);background:rgba(63,214,255,.07)}
+
+  /* CTA */
+  .cta{
+    border-radius:24px;padding:46px 34px;text-align:center;position:relative;overflow:hidden;
+    border:1px solid var(--line2);
+    background:
+      radial-gradient(600px 260px at 20% 0%,rgba(63,214,255,.2),transparent 65%),
+      radial-gradient(600px 260px at 85% 100%,rgba(255,95,162,.18),transparent 65%),
+      var(--panel);
+  }
+  .cta h2{margin-bottom:12px}
+  .cta p{color:var(--muted);max-width:620px;margin:0 auto 26px;font-size:14.5px}
+  .cta .hero-actions{justify-content:center;margin-bottom:0}
+
+  /* 页脚 */
+  footer{border-top:1px solid var(--line);padding:54px 0 28px;margin-top:20px;background:rgba(5,9,17,.7)}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:36px}
+  .foot-grid h4{font-size:13.5px;margin-bottom:14px;letter-spacing:1px;color:var(--text)}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .foot-grid ul a,.foot-grid ul li{font-size:12.8px;color:var(--muted);transition:.2s}
+  .foot-grid ul a:hover{color:var(--cyan)}
+  .foot-brand p{font-size:12.8px;color:var(--muted);margin-top:12px;max-width:320px;line-height:1.8}
+  .foot-bottom{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--dim)}
+
+  /* Toast / 弹窗 */
+  #toast{
+    position:fixed;left:50%;bottom:38px;transform:translate(-50%,26px);
+    background:linear-gradient(135deg,var(--cyan),var(--violet));color:#04101c;
+    font-weight:800;font-size:13px;padding:11px 24px;border-radius:99px;
+    box-shadow:0 14px 40px rgba(63,214,255,.4);opacity:0;pointer-events:none;
+    transition:.32s;z-index:200;
+  }
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  .modal-mask{
+    position:fixed;inset:0;background:rgba(3,6,12,.78);backdrop-filter:blur(6px);
+    display:none;place-items:center;z-index:150;padding:20px;
+  }
+  .modal-mask.show{display:grid}
+  .modal{
+    width:min(520px,100%);background:var(--panel);border:1px solid var(--line2);
+    border-radius:20px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.7);position:relative;
+  }
+  .modal h3{font-size:19px;margin-bottom:8px}
+  .modal p.sub{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .modal label{font-size:12px;color:var(--dim);display:block;margin:12px 0 6px;letter-spacing:1px}
+  .modal input,.modal textarea,.modal select{
+    width:100%;background:rgba(120,160,255,.07);border:1px solid var(--line2);
+    border-radius:10px;padding:10px 13px;color:var(--text);font-family:inherit;font-size:13.5px;outline:0;
+  }
+  .modal input:focus,.modal textarea:focus,.modal select:focus{border-color:var(--cyan)}
+  .modal textarea{resize:vertical;min-height:86px}
+  .modal .close{
+    position:absolute;right:16px;top:14px;background:transparent;border:0;color:var(--dim);
+    font-size:22px;cursor:pointer;line-height:1;font-family:inherit;
+  }
+  .modal .close:hover{color:var(--pink)}
+  .modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:20px}
+
+  #toTop{
+    position:fixed;right:24px;bottom:26px;width:46px;height:46px;border-radius:50%;
+    border:1px solid var(--line2);background:rgba(10,17,31,.9);color:var(--cyan);
+    font-size:17px;cursor:pointer;display:grid;place-items:center;z-index:90;
+    opacity:0;pointer-events:none;transition:.3s;font-family:inherit;backdrop-filter:blur(8px);
+  }
+  #toTop.show{opacity:1;pointer-events:auto}
+  #toTop:hover{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#04101c;border-color:transparent}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .cube-frame{aspect-ratio:16/11;max-width:520px;margin:0 auto}
+    .focus-grid{grid-template-columns:1fr}
+    .focus-side{grid-template-rows:none;grid-template-columns:1fr 1fr}
+    .stream{grid-template-columns:repeat(2,1fr)}
+    .topics{grid-template-columns:1fr 1fr}
+    .creators{grid-template-columns:1fr 1fr}
+    .quotes{grid-template-columns:1fr 1fr}
+    .split{grid-template-columns:1fr}
+    .partners{grid-template-columns:repeat(3,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .wall{grid-template-columns:repeat(4,1fr)}
+    .w-big{grid-column:span 2;grid-row:span 2}
+    .w-mid{grid-column:span 2;grid-row:span 1}
+    .w-wide{grid-column:span 2}
+  }
+  @media (max-width:720px){
+    section{padding:54px 0}
+    .navbar{gap:12px}
+    nav.mainnav{
+      display:none;flex-direction:column;width:100%;order:5;
+      background:rgba(10,17,31,.96);border:1px solid var(--line);border-radius:14px;padding:10px;
+    }
+    nav.mainnav.open{display:flex}
+    nav.mainnav a{width:100%}
+    .burger{display:block;margin-left:auto}
+    .searchbox{order:4;width:100%;min-width:0}
+    .searchbox input{width:100%;flex:1}
+    .stats{grid-template-columns:1fr}
+    .focus-side{grid-template-columns:1fr}
+    .stream{grid-template-columns:1fr}
+    .topics{grid-template-columns:1fr}
+    .creators{grid-template-columns:1fr}
+    .quotes{grid-template-columns:1fr}
+    .partners{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}
+    .w-big,.w-mid,.w-wide{grid-column:span 2;grid-row:span 1}
+    .w-sm{grid-column:span 1;grid-row:span 1}
+    .floating-chip{display:none}
+    .notice .tag{font-size:11px;padding:2px 8px}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== 吸顶公告 + 页头 ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="notice">
+      <span class="tag">官方发布</span>
+      <marquee scrollamount="3" behavior="scroll">
+        新增专题《深空观测手记·第 12 期》已上线 · <b>「宇宙魔方」2025 年度创作者大赛</b> 报名通道开启 · 影像素材库新增 4K 星野片段 86 条 · 企业动态：品牌官网内容中心完成改版
+      </marquee>
+    </div>
+  </div>
+  <header class="site">
+    <div class="wrap navbar">
+      <a href="#top" class="logo">
+        <span class="logo-mark"></span>
+        <span>宇宙魔方<small>COSMIC CUBE</small></span>
+      </a>
+      <button class="burger" id="burger" aria-label="展开导航">☰</button>
+      <nav class="mainnav" id="mainnav">
+        <a href="#top" class="active">首页</a>
+        <a href="#focus">焦点视频</a>
+        <a href="#topics">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#wall">影像墙</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="searchbox" style="position:relative">
+        <span style="color:var(--dim);font-size:13px">⌕</span>
+        <input id="searchInput" type="text" placeholder="搜索专题 / 创作者 / 影像">
+        <button id="searchBtn">搜索</button>
+        <div class="search-hint" id="searchHint"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- ===== 首屏 ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">官方网站 · 原创科幻影像品牌</div>
+        <h1><span>宇宙魔方</span></h1>
+        <div class="badges">
+          <span class="badge hot">官方 · 正版内容</span>
+          <span class="badge">深耕科幻影像 9 年</span>
+          <span class="badge">高清 4K 影像库</span>
+        </div>
+        <p class="lead">
+          作为国内领先的科幻影像品牌，宇宙魔方官方网站致力于为创作者、科研机构与影像爱好者搭建高品质内容生态。我们以「把未知拍成可以触摸的画面」为使命，持续输出原创纪录片、深空观测实录、概念短片与创作者访谈，让每一次仰望星空都有真实可依的影像记录。
+        </p>
+        <div class="hero-actions">
+          <a href="#focus" class="btn btn-primary">浏览焦点内容 →</a>
+          <button class="btn btn-ghost" data-open="submit">申请成为创作者</button>
+          <button class="btn btn-ghost" data-share>分享本站</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><b data-count="1286">0</b><span>原创影像作品</span></div>
+          <div class="stat"><b data-count="47">0</b><span>签约创作者</span></div>
+          <div class="stat"><b data-count="920">0</b><span>社区活跃成员（万）</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="cube-frame">
+          <img alt="宇宙魔方品牌主视觉：悬浮于深空中的立体魔方结构与星云光带" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 460'><defs><linearGradient id='sky' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230a1330'/><stop offset='.5' stop-color='%23132a5c'/><stop offset='1' stop-color='%23070b18'/></linearGradient><radialGradient id='neb' cx='.72' cy='.28' r='.55'><stop offset='0' stop-color='%238a6bff' stop-opacity='.85'/><stop offset='1' stop-color='%238a6bff' stop-opacity='0'/></radialGradient><radialGradient id='neb2' cx='.2' cy='.72' r='.5'><stop offset='0' stop-color='%233fd6ff' stop-opacity='.6'/><stop offset='1' stop-color='%233fd6ff' stop-opacity='0'/></radialGradient><linearGradient id='cubeA' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233fd6ff'/><stop offset='1' stop-color='%238a6bff'/></linearGradient><linearGradient id='cubeB' x1='1' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23ff5fa2'/><stop offset='1' stop-color='%238a6bff'/></linearGradient></defs><rect width='400' height='460' fill='url(%23sky)'/><rect width='400' height='460' fill='url(%23neb)'/><rect width='400' height='460' fill='url(%23neb2)'/><g fill='%23ffffff' opacity='.85'><circle cx='48' cy='62' r='1.6'/><circle cx='120' cy='38' r='1'/><circle cx='320' cy='90' r='1.4'/><circle cx='360' cy='210' r='1'/><circle cx='70' cy='300' r='1.2'/><circle cx='250' cy='150' r='.9'/><circle cx='330' cy='390' r='1.5'/><circle cx='40' cy='410' r='1'/></g><g stroke='%233fd6ff' stroke-opacity='.35' fill='none'><circle cx='200' cy='236' r='132'/><circle cx='200' cy='236' r='164' stroke-dasharray='4 12'/></g><g transform='translate(200 236)'><polygon points='0,-98 78,-52 78,52 0,98 -78,52 -78,-52' fill='url(%23cubeA)' opacity='.92'/><polygon points='0,-98 78,-52 0,-8 -78,-52' fill='%23b8ff4f' opacity='.55'/><polygon points='-78,-52 0,-8 0,98 -78,52' fill='url(%23cubeB)' opacity='.8'/><polygon points='78,-52 0,-8 0,98 78,52' fill='%230a1330' opacity='.72'/><g stroke='%23ffffff' stroke-opacity='.7' fill='none' stroke-width='1.4'><polygon points='0,-98 78,-52 78,52 0,98 -78,52 -78,-52'/></g></g><g fill='%23ffffff'><circle cx='200' cy='236' r='4' opacity='.95'/></g></svg>">
+          <div class="play" title="播放品牌概念片"></div>
+        </div>
+        <div class="floating-chip fc1">本期专题<b>深空观测手记</b></div>
+        <div class="floating-chip fc2">创作者大赛<b>报名进行中</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 焦点视频 ===== -->
+  <section id="focus">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Focus · 焦点视频</div>
+          <h2>本周<em>焦点内容</em>，由编辑部与创作者共同推荐</h2>
+        </div>
+        <p>每一条焦点内容都经过内容委员会审看，确保影像品质与科学表达的严谨性，这是我们对「用户首选」这四个字的长期承诺。</p>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-main reveal">
+          <div class="cover">
+            <span class="cat">年度旗舰</span>
+            <span class="dur">42:18</span>
+            <div class="tri"></div>
+            <img alt="焦点视频封面：深空观测手记第十二期，望远镜圆顶与银河同框" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 320'><defs><linearGradient id='n1' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%230b1730'/><stop offset='1' stop-color='%231b2f66'/></linearGradient><radialGradient id='g1' cx='.7' cy='.25' r='.6'><stop offset='0' stop-color='%23cfe4ff' stop-opacity='.55'/><stop offset='1' stop-color='%23cfe4ff' stop-opacity='0'/></radialGradient></defs><rect width='640' height='320' fill='url(%23n1)'/><rect width='640' height='320' fill='url(%23g1)'/><g fill='%23fff' opacity='.9'><circle cx='60' cy='40' r='1.5'/><circle cx='180' cy='28' r='1'/><circle cx='300' cy='58' r='1.3'/><circle cx='520' cy='34' r='1'/><circle cx='600' cy='90' r='1.6'/><circle cx='420' cy='70' r='.9'/></g><ellipse cx='320' cy='210' rx='400' ry='110' fill='%233fd6ff' opacity='.14'/><path d='M0 320 L0 250 Q170 200 320 236 Q470 272 640 226 L640 320 Z' fill='%23070d1c'/><g transform='translate(430 196)'><path d='M-34 74 L34 74 L22 52 L-22 52 Z' fill='%231d2b4c'/><rect x='-26' y='6' width='52' height='48' rx='6' fill='%23243760'/><rect x='-26' y='6' width='52' height='10' fill='%233fd6ff' opacity='.6'/><path d='M0 6 L-46 -66 L46 -66 Z' fill='%23243760' stroke='%233fd6ff' stroke-opacity='.4'/><path d='M0 6 L0 -66' stroke='%233fd6ff' stroke-opacity='.5'/><circle cx='0' cy='-64' r='5' fill='%23b8ff4f'/></g><g stroke='%233fd6ff' stroke-opacity='.5' fill='none'><path d='M100 260 Q180 210 260 250'/></g><circle cx='100' cy='260' r='3' fill='%23b8ff4f'/></svg>">
+          </div>
+          <div>
+            <h3 class="card-title">深空观测手记 · 第十二期：我们把一台望远镜搬上了高原</h3>
+            <p class="card-desc">历时 11 天、海拔 4300 米、零下 14 度。摄制组跟随观测团队记录了一次完整的深空成像流程，从器材架设到凌晨四点的第一张清晰星云图。本片包含完整的设备清单与后期处理拆解。</p>
+            <div class="tags">
+              <span class="tag">深空观测</span><span class="tag">创作幕后</span><span class="tag">知识科普</span><span class="tag">4K 高清</span>
+            </div>
+            <div class="meta-row" style="margin-top:12px">
+              <span>创作者 · 沈观星</span><span class="dot"></span><span>2025-11-02</span><span class="dot"></span><span>12.8 万次播放</span><span class="dot"></span><span>3,421 收藏</span>
+            </div>
+            <div class="actions">
+              <button class="act" data-like>♡ 点赞 <b class="num">2148</b></button>
+              <button class="act" data-save>☆ 收藏</button>
+              <button class="act" data-share>↗ 分享</button>
+              <button class="act" data-open="comment">💬 评论 186</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="focus-side reveal">
+          <article class="mini card">
+            <div class="cover">
+              <span class="dur">18:04</span>
+              <div class="tri"></div>
+              <img alt="视频封面：星际尘埃概念短片中的紫色尘埃漩涡" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><defs><radialGradient id='d1' cx='.5' cy='.5' r='.5'><stop offset='0' stop-color='%238a6bff'/><stop offset='1' stop-color='%230b1226' stop-opacity='0'/></radialGradient></defs><rect width='320' height='200' fill='%230b1226'/><rect width='320' height='200' fill='url(%23d1)'/><g fill='none' stroke='%23cfc0ff' stroke-opacity='.55'><ellipse cx='160' cy='100' rx='110' ry='38'/><ellipse cx='160' cy='100' rx='78' ry='26'/><ellipse cx='160' cy='100' rx='44' ry='14'/></g><circle cx='160' cy='100' r='9' fill='%23fff' opacity='.9'/><g fill='%23fff' opacity='.8'><circle cx='42' cy='38' r='1.2'/><circle cx='278' cy='52' r='1'/><circle cx='250' cy='160' r='1.4'/><circle cx='70' cy='168' r='1'/></g></svg>">
+            </div>
+            <div>
+              <h3>星尘叙事：一支概念短片的 37 版分镜</h3>
+              <p>分镜 / 调色 / 音效全流程复盘</p>
+            </div>
+          </article>
+          <article class="mini card">
+            <div class="cover">
+              <span class="dur">24:52</span>
+              <div class="tri"></div>
+              <img alt="视频封面：行星表面探测器与橙色地平线" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><defs><linearGradient id='m1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23140e24'/><stop offset='1' stop-color='%233b1f2e'/></linearGradient></defs><rect width='320' height='200' fill='url(%23m1)'/><circle cx='250' cy='52' r='26' fill='%23ff8a5c' opacity='.85'/><path d='M0 200 L0 148 Q110 120 200 142 Q260 156 320 138 L320 200 Z' fill='%23271220'/><g transform='translate(120 150)'><rect x='-22' y='-16' width='44' height='22' rx='4' fill='%23e8cbb6'/><rect x='-30' y='6' width='12' height='12' rx='3' fill='%239b7a68'/><rect x='18' y='6' width='12' height='12' rx='3' fill='%239b7a68'/><path d='M0 -16 L0 -34' stroke='%23e8cbb6' stroke-width='2'/><circle cx='0' cy='-36' r='3' fill='%23b8ff4f'/></g><g fill='%23fff' opacity='.7'><circle cx='50' cy='30' r='1.2'/><circle cx='180' cy='22' r='1'/><circle cx='300' cy='100' r='1'/></g></svg>">
+            </div>
+            <div>
+              <h3>着陆之后：探测器八分钟的沉默</h3>
+              <p>行业观察 · 科学家访谈实录</p>
+            </div>
+          </article>
+          <article class="mini card">
+            <div class="cover">
+              <span class="dur">09:31</span>
+              <div class="tri"></div>
+              <img alt="视频封面：城市夜空与光污染的对比画面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><defs><linearGradient id='c1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%23070b18'/><stop offset='1' stop-color='%232a3f6b'/></linearGradient></defs><rect width='320' height='200' fill='url(%23c1)'/><g fill='%23101a30'><rect x='14' y='120' width='26' height='80'/><rect x='48' y='98' width='22' height='102'/><rect x='78' y='132' width='30' height='68'/><rect x='116' y='86' width='18' height='114'/><rect x='204' y='112' width='26' height='88'/><rect x='240' y='94' width='20' height='106'/><rect x='270' y='128' width='34' height='72'/></g><g fill='%23ffd98a' opacity='.85'><rect x='20' y='128' width='4' height='4'/><rect x='34' y='140' width='4' height='4'/><rect x='54' y='108' width='4' height='4'/><rect x='86' y='142' width='4' height='4'/><rect x='122' y='96' width='4' height='4'/><rect x='210' y='122' width='4' height='4'/><rect x='246' y='104' width='4' height='4'/><rect x='280' y='140' width='4' height='4'/></g><g fill='%23fff' opacity='.75'><circle cx='170' cy='34' r='1.3'/><circle cx='214' cy='58' r='1'/><circle cx='140' cy='62' r='1'/><circle cx='250' cy='26' r='1.2'/><circle cx='300' cy='70' r='1'/></g><path d='M160 200 L160 60' stroke='%233fd6ff' stroke-opacity='.4' stroke-dasharray='3 6'/></svg>">
+            </div>
+            <div>
+              <h3>如何在家门口找到一片真正的暗夜</h3>
+              <p>实用技巧 · 光污染躲避指南</p>
+            </div>
+          </article>
+          <article class="mini card">
+            <div class="cover">
+              <span class="dur">33:07</span>
+              <div class="tri"></div>
+              <img alt="视频封面：创作者工作台与多屏剪辑界面" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'><rect width='320' height='200' fill='%230d1830'/><rect x='26' y='38' width='150' height='92' rx='7' fill='%231d2c4c' stroke='%233fd6ff' stroke-opacity='.5'/><rect x='38' y='52' width='126' height='52' rx='4' fill='%230a1222'/><path d='M60 92 L92 66 L112 84 L140 58 L152 96' stroke='%233fd6ff' stroke-width='2' fill='none'/><rect x='188' y='38' width='106' height='52' rx='7' fill='%231d2c4c'/><rect x='188' y='100' width='106' height='30' rx='7' fill='%23243760'/><g fill='%23b8ff4f'><rect x='44' y='150' width='60' height='6' rx='3'/><rect x='114' y='150' width='34' height='6' rx='3' opacity='.6'/><rect x='158' y='150' width='80' height='6' rx='3' opacity='.3'/></g><circle cx='264' cy='164' r='12' fill='%238a6bff' opacity='.8'/></svg>">
+            </div>
+            <div>
+              <h3>在剪辑台上重构一个星系</h3>
+              <p>教程干货 · 三维合成入门</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 热门视频流 ===== -->
+  <section id="stream">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Trending · 热门视频流</div>
+          <h2>社区正在观看的<em>精品内容</em></h2>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-ghost btn-sm filter-btn" data-filter="all" style="border-color:var(--cyan);color:var(--cyan)">全部</button>
+          <button class="btn btn-ghost btn-sm filter-btn" data-filter="科普">知识科普</button>
+          <button class="btn btn-ghost btn-sm filter-btn" data-filter="幕后">创作幕后</button>
+          <button class="btn btn-ghost btn-sm filter-btn" data-filter="访谈">人物访谈</button>
+          <button class="btn btn-ghost btn-sm filter-btn" data-filter="日常">日常记录</button>
+        </div>
+      </div>
+
+      <div class="stream" id="streamGrid">
+        <article class="card video-card reveal" data-cat="科普">
+          <div class="cover">
+            <span class="cat">知识科普</span><span class="dur">16:22</span><div class="tri"></div>
+            <img alt="视频封面：土星环结构示意与轨道标注" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><rect width='480' height='270' fill='%23070d1c'/><g fill='%23fff' opacity='.7'><circle cx='40' cy='36' r='1.2'/><circle cx='120' cy='22' r='1'/><circle cx='400' cy='46' r='1.4'/><circle cx='440' cy='210' r='1'/><circle cx='70' cy='220' r='1.1'/></g><ellipse cx='240' cy='140' rx='150' ry='36' fill='none' stroke='%233fd6ff' stroke-opacity='.55'/><ellipse cx='240' cy='140' rx='118' ry='27' fill='none' stroke='%238a6bff' stroke-opacity='.45'/><circle cx='240' cy='140' r='58' fill='%23d8b98c'/><circle cx='240' cy='140' r='58' fill='%23a8834f' opacity='.35'/><path d='M240 82 A58 58 0 0 1 240 198' fill='%23906f42' opacity='.35'/><g stroke='%233fd6ff' stroke-opacity='.7' stroke-width='1.5'><path d='M96 92 L152 114'/><path d='M384 188 L330 164'/></g><g fill='%23b8ff4f' font-size='11' font-family='sans-serif'><text x='52' y='86'>A 环</text><text x='392' y='206'>B 环</text></g></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">土星环到底有多薄？用一张纸做比例尺</h3>
+            <p class="card-desc">把 28 万公里的环系压缩到一张 A4 纸，你会看到完全不同的尺度感。本期用三个可视模型讲清楚行星环的真实厚度。</p>
+            <div class="tags"><span class="tag">天文</span><span class="tag">可视化</span><span class="tag">尺度感</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>林数</span><span class="dot"></span><span>8.6 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">932</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card video-card reveal" data-cat="幕后">
+          <div class="cover">
+            <span class="cat">创作幕后</span><span class="dur">21:40</span><div class="tri"></div>
+            <img alt="视频封面：夜外拍摄现场，摄影机与柔光灯阵列" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><defs><linearGradient id='s1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%230a1120'/><stop offset='1' stop-color='%23182b4d'/></linearGradient></defs><rect width='480' height='270' fill='url(%23s1)'/><rect y='200' width='480' height='70' fill='%23090f1c'/><g><rect x='60' y='96' width='16' height='106' fill='%23243760'/><circle cx='68' cy='92' r='16' fill='%23ffd98a' opacity='.9'/><rect x='386' y='106' width='16' height='96' fill='%23243760'/><circle cx='394' cy='102' r='13' fill='%233fd6ff' opacity='.8'/></g><g transform='translate(240 168)'><rect x='-52' y='-34' width='74' height='52' rx='7' fill='%231d2c4c' stroke='%233fd6ff' stroke-opacity='.6'/><circle cx='-10' cy='-8' r='15' fill='%230a1222' stroke='%233fd6ff' stroke-opacity='.8'/><path d='M22 -34 L42 -52 L58 -52 L58 -8 L22 -8 Z' fill='%23243760'/><rect x='-16' y='18' width='10' height='26' fill='%23243760'/><rect x='6' y='18' width='10' height='26' fill='%23243760'/></g><g stroke='%233fd6ff' stroke-opacity='.4' stroke-dasharray='4 6'><path d='M68 92 L200 140'/><path d='M394 102 L290 146'/></g></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">零下十度的夜外：一场拍摄的完整时间线</h3>
+            <p class="card-desc">从下午四点架机到凌晨两点收工，我们记录了灯光、保暖、电池续航与团队调度上的所有真实问题，包括那台冻到罢工的监视器。</p>
+            <div class="tags"><span class="tag">拍摄纪实</span><span class="tag">团队协作</span><span class="tag">设备</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>柏舟工作室</span><span class="dot"></span><span>6.2 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">704</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card video-card reveal" data-cat="访谈">
+          <div class="cover">
+            <span class="cat">人物访谈</span><span class="dur">28:14</span><div class="tri"></div>
+            <img alt="视频封面：两位创作者对谈，暖色灯光与深色背景" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><rect width='480' height='270' fill='%23151026'/><radialGradient id='t1' cx='.5' cy='.3' r='.7'><stop offset='0' stop-color='%23ff9d6b' stop-opacity='.36'/><stop offset='1' stop-color='%23ff9d6b' stop-opacity='0'/></radialGradient><rect width='480' height='270' fill='url(%23t1)'/><g><circle cx='168' cy='128' r='42' fill='%23e8cbb6'/><path d='M126 214 Q126 168 168 168 Q210 168 210 214 Z' fill='%233fd6ff' opacity='.75'/><circle cx='310' cy='136' r='38' fill='%23d8b98c'/><path d='M272 216 Q272 174 310 174 Q348 174 348 216 Z' fill='%238a6bff' opacity='.75'/></g><rect x='140' y='228' width='200' height='3' rx='1.5' fill='%233fd6ff' opacity='.5'/><g fill='%23fff' opacity='.6'><circle cx='60' cy='50' r='1.2'/><circle cx='420' cy='60' r='1.2'/><circle cx='440' cy='190' r='1'/></g></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">对话沈观星：拍星空的人，先要学会等待</h3>
+            <p class="card-desc">九年间他换过四台望远镜、丢了两次三脚架、在海拔五千米吐过一晚上。访谈里他谈得最多的却是「耐心」和「放弃的时机」。</p>
+            <div class="tags"><span class="tag">人物</span><span class="tag">创作观</span><span class="tag">长访谈</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>编辑部 · 未命名</span><span class="dot"></span><span>5.4 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">611</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card video-card reveal" data-cat="日常">
+          <div class="cover">
+            <span class="cat">日常记录</span><span class="dur">12:05</span><div class="tri"></div>
+            <img alt="视频封面：清晨窗台上的天文笔记本与咖啡杯" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><rect width='480' height='270' fill='%23f2e9db'/><rect y='196' width='480' height='74' fill='%23dccbb3'/><rect x='40' y='40' width='170' height='110' rx='6' fill='%23fffaf0' stroke='%23c9b49b'/><g stroke='%23c9b49b' stroke-width='2' stroke-dasharray='4 7'><path d='M40 92 L210 92'/><path d='M40 122 L210 122'/></g><text x='60' y='76' font-size='15' fill='%238a6b4f' font-family='sans-serif'>观测记录</text><g><ellipse cx='330' cy='196' rx='58' ry='14' fill='%23c9b49b' opacity='.5'/><path d='M288 130 L372 130 L364 190 Q330 200 296 190 Z' fill='%23ffffff'/><path d='M372 140 Q400 148 372 172' fill='none' stroke='%23ffffff' stroke-width='7'/><ellipse cx='330' cy='130' rx='42' ry='11' fill='%23a8734a'/><path d='M310 96 Q322 82 314 68' stroke='%23c9b49b' stroke-width='3' fill='none' opacity='.7'/></g><circle cx='420' cy='80' r='22' fill='%23ffd98a'/></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">一个观星者的清晨：记录本、咖啡和一次失败的对焦</h3>
+            <p class="card-desc">没有壮丽银河，只有一次没对上的焦和一杯凉掉的咖啡。日常记录的意义在于，它保留了不完美的那部分。</p>
+            <div class="tags"><span class="tag">日常</span><span class="tag">治愈影像</span><span class="tag">手写记录</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>阿暮</span><span class="dot"></span><span>4.9 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">588</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card video-card reveal" data-cat="科普">
+          <div class="cover">
+            <span class="cat">知识科普</span><span class="dur">14:48</span><div class="tri"></div>
+            <img alt="视频封面：引力透镜效果示意，光线弯曲的弧线" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><rect width='480' height='270' fill='%2308101f'/><g fill='none' stroke-width='2'><path d='M-20 100 Q240 20 500 100' stroke='%233fd6ff' stroke-opacity='.8'/><path d='M-20 130 Q240 56 500 130' stroke='%238a6bff' stroke-opacity='.75'/><path d='M-20 160 Q240 92 500 160' stroke='%23ff5fa2' stroke-opacity='.6'/></g><circle cx='240' cy='136' r='40' fill='%2308101f' stroke='%23b8ff4f' stroke-opacity='.6'/><circle cx='240' cy='136' r='9' fill='%23b8ff4f'/><g fill='%23fff' opacity='.85'><circle cx='80' cy='50' r='1.4'/><circle cx='400' cy='44' r='1.2'/><circle cx='360' cy='220' r='1.4'/><circle cx='120' cy='226' r='1.2'/></g></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">光为什么会拐弯：用一杯水演示引力透镜</h3>
+            <p class="card-desc">不用高等数学，一个玻璃杯、一支激光笔和一张黑卡纸，就能看到爱因斯坦环的雏形。本期附完整器材清单。</p>
+            <div class="tags"><span class="tag">物理</span><span class="tag">动手实验</span><span class="tag">科普</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>格子里的物理</span><span class="dot"></span><span>7.1 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">826</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card video-card reveal" data-cat="幕后">
+          <div class="cover">
+            <span class="cat">创作幕后</span><span class="dur">19:33</span><div class="tri"></div>
+            <img alt="视频封面：绿色调色界面与音效波形堆叠" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'><rect width='480' height='270' fill='%230a1a18'/><rect x='30' y='34' width='200' height='120' rx='8' fill='%23122a26' stroke='%23b8ff4f' stroke-opacity='.5'/><g fill='%23b8ff4f' opacity='.8'><rect x='52' y='96' width='10' height='40' rx='3'/><rect x='74' y='80' width='10' height='56' rx='3'/><rect x='96' y='110' width='10' height='26' rx='3'/><rect x='118' y='68' width='10' height='68' rx='3'/><rect x='140' y='88' width='10' height='48' rx='3'/><rect x='162' y='102' width='10' height='34' rx='3'/><rect x='184' y='76' width='10' height='60' rx='3'/></g><g><circle cx='340' cy='96' r='52' fill='none' stroke='%233fd6ff' stroke-opacity='.6' stroke-width='2'/><circle cx='340' cy='96' r='30' fill='none' stroke='%238a6bff' stroke-opacity='.6'/><path d='M340 96 L388 66' stroke='%23b8ff4f' stroke-width='2'/></g><rect x='30' y='176' width='420' height='4' rx='2' fill='%23122a26'/><rect x='30' y='176' width='248' height='4' rx='2' fill='%233fd6ff'/><circle cx='278' cy='178' r='7' fill='%23fff'/></svg>">
+          </div>
+          <div class="body">
+            <h3 class="card-title">声音先于画面：科幻短片的音效设计方法</h3>
+            <p class="card-desc">低频铺底、金属摩擦、真空静默——三种声音策略如何在五分钟内建立「宇宙感」。附可复用的音效层级模板。</p>
+            <div class="tags"><span class="tag">音效</span><span class="tag">后期</span><span class="tag">方法论</span></div>
+            <div class="meta-row" style="margin-top:10px"><span>声场实验室</span><span class="dot"></span><span>3.8 万播放</span></div>
+            <div class="actions">
+              <button class="act" data-like>♡ <b class="num">467</b></button>
+              <button class="act" data-save>☆</button>
+              <button class="act" data-share>↗</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 专题企划 ===== -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Series · 专题企划</div>
+          <h2>持续运营的长线<em>专题</em>与共创企划</h2>
+        </div>
+        <p>专题不是合集，而是一条能持续生长的主线。每个专题背后都有固定的策划、审片与共创机制。</p>
+      </div>
+      <div class="topics">
+        <article class="topic reveal">
+          <img alt="专题封面：深空观测手记系列，高原上的望远镜剪影" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='t1a' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%230d1a3a'/><stop offset='1' stop-color='%231c2f5e'/></linearGradient></defs><rect width='400' height='300' fill='url(%23t1a)'/><g fill='%23fff' opacity='.85'><circle cx='40' cy='40' r='1.4'/><circle cx='130' cy='24' r='1'/><circle cx='300' cy='50' r='1.3'/><circle cx='360' cy='120' r='1'/><circle cx='80' cy='130' r='1.2'/></g><path d='M0 300 L0 210 Q120 176 220 200 Q320 224 400 196 L400 300 Z' fill='%23091226'/><g transform='translate(270 176)'><rect x='-10' y='0' width='20' height='34' fill='%23243760'/><path d='M0 0 L-40 -52 L40 -52 Z' fill='%23243760' stroke='%233fd6ff' stroke-opacity='.55'/><path d='M0 0 L0 -52' stroke='%233fd6ff' stroke-opacity='.6'/></g><g fill='%23b8ff4f' opacity='.8'><circle cx='60' cy='230' r='2'/></g></svg>">
+          <div class="inner">
+            <span class="state">更新至第 12 期</span>
+            <h3>深空观测手记</h3>
+            <p>跟拍观测团队的每一个夜晚，记录设备、天气、失败与惊喜。</p>
+          </div>
+        </article>
+        <article class="topic reveal">
+          <img alt="专题封面：星际尘埃概念影像中的紫红色星云与光带" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%230d0a1c'/><g fill='none' stroke-width='26' stroke-opacity='.5'><path d='M-20 200 Q120 100 220 170 Q320 240 420 140' stroke='%238a6bff'/><path d='M-20 230 Q120 130 220 200 Q320 270 420 170' stroke='%23ff5fa2'/></g><g fill='%23fff' opacity='.9'><circle cx='200' cy='110' r='2'/><circle cx='60' cy='70' r='1.4'/><circle cx='330' cy='60' r='1.6'/><circle cx='360' cy='230' r='1.2'/><circle cx='100' cy='250' r='1'/></g></svg>">
+          <div class="inner">
+            <span class="state">共 8 集 · 已完结</span>
+            <h3>星尘叙事：概念短片计划</h3>
+            <p>八位导演，同一个命题：如何用影像描述看不见的物质。</p>
+          </div>
+        </article>
+        <article class="topic reveal">
+          <img alt="专题封面：创作者大赛视觉，发光立方体与投票图形" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect width='400' height='300' fill='%230b1226'/><g transform='translate(200 140)'><polygon points='0,-70 60,-36 60,36 0,70 -60,36 -60,-36' fill='none' stroke='%233fd6ff' stroke-width='2'/><polygon points='0,-70 60,-36 0,-2 -60,-36' fill='%233fd6ff' opacity='.3'/><polygon points='-60,-36 0,-2 0,70 -60,36' fill='%238a6bff' opacity='.35'/></g><g fill='%23b8ff4f'><rect x='120' y='236' width='52' height='8' rx='4'/><rect x='180' y='236' width='40' height='8' rx='4' opacity='.6'/><rect x='228' y='236' width='52' height='8' rx='4' opacity='.3'/></g><g fill='%23fff' opacity='.7'><circle cx='50' cy='50' r='1.2'/><circle cx='350' cy='60' r='1.2'/></g></svg>">
+          <div class="inner">
+            <span class="state">报名进行中 · 剩余 18 天</span>
+            <h3>年度创作者大赛</h3>
+            <p>提交一支三分钟以内的原创概念片，参与公开投票与专业评审。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 创作者矩阵 ===== -->
+  <section id="creators">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Creators · 创作者矩阵</div>
+          <h2>与我们一同构建内容生态的<em>创作者</em></h2>
+        </div>
+        <p>点击任意创作者卡片，可查看其擅长领域、作品数量与合作方式。</p>
+      </div>
+      <div class="creators">
+        <article class="creator reveal" data-name="沈观星" data-field="深空摄影 · 观测纪实" data-desc="九年深空摄影经验，擅长长周期观测纪实与器材解析，作品以真实的等待与失败为核心叙事。">
+          <div class="avatar" style="background:linear-gradient(135deg,#3fd6ff,#8a6bff)">沈</div>
+          <h3>沈观星</h3>
+          <div class="field">深空摄影 · 观测纪实</div>
+          <p>九年深空摄影经验，坚持把失败镜头也留在片子里。</p>
+          <div class="nums"><span>作品<b>86</b></span><span>关注<b>12.4万</b></span></div>
+        </article>
+        <article class="creator reveal" data-name="林数" data-field="天文科普 · 可视化" data-desc="天体物理专业背景，擅长用可视化模型把抽象的尺度与结构讲清楚，视频以严谨与趣味并重著称。">
+          <div class="avatar" style="background:linear-gradient(135deg,#b8ff4f,#3fd6ff)">林</div>
+          <h3>林数</h3>
+          <div class="field">天文科普 · 可视化</div>
+          <p>用模型和比例尺解释宇宙，一条视频看三遍才够。</p>
+          <div class="nums"><span>作品<b>64</b></span><span>关注<b>9.8万</b></span></div>
+        </article>
+        <article class="creator reveal" data-name="柏舟工作室" data-field="拍摄纪实 · 团队协作" data-desc="一支专注科幻题材的影视制作团队，擅长夜外拍摄与低温环境制作，作品多以幕后工作流为主线。">
+          <div class="avatar" style="background:linear-gradient(135deg,#ff5fa2,#8a6bff)">柏</div>
+          <h3>柏舟工作室</h3>
+          <div class="field">拍摄纪实 · 团队协作</div>
+          <p>在极端环境里完成拍摄，并把过程完整交出来。</p>
+          <div class="nums"><span>作品<b>41</b></span><span>关注<b>7.2万</b></span></div>
+        </article>
+        <article class="creator reveal" data-name="阿暮" data-field="日常记录 · 治愈影像" data-desc="以日常记录为主的独立创作者，擅长把平凡的清晨与夜晚拍出温度，坚持手写记录与自然光拍摄。">
+          <div class="avatar" style="background:linear-gradient(135deg,#ffd98a,#ff8a5c)">阿</div>
+          <h3>阿暮</h3>
+          <div class="field">日常记录 · 治愈影像</div>
+          <p>记录不完美的那部分，反而更容易被记住。</p>
+          <div class="nums"><span>作品<b>112</b></span><span>关注<b>15.6万</b></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 影像墙 ===== -->
+  <section id="wall">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Gallery · 影像墙</div>
+          <h2>社区投稿的<em>影像作品墙</em></h2>
+        </div>
+        <p>共 9 幅作品入选本期影像墙，均由社区成员投稿并经内容委员会筛选。</p>
+      </div>
+      <div class="wall">
+        <figure class="w-big reveal">
+          <img alt="影像墙大图：银河横跨沙漠夜空，前景为营地帐篷" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><defs><linearGradient id='w1' x1='0' y1='0' x2='0' y2='1'><stop offset='0' stop-color='%2309101f'/><stop offset='1' stop-color='%23234070'/></linearGradient><radialGradient id='mw' cx='.5' cy='.35' r='.55'><stop offset='0' stop-color='%23cfd8ff' stop-opacity='.5'/><stop offset='1' stop-color='%23cfd8ff' stop-opacity='0'/></radialGradient></defs><rect width='600' height='400' fill='url(%23w1)'/><rect width='600' height='400' fill='url(%23mw)'/><path d='M0 250 Q150 190 300 236 Q450 282 600 218 L600 400 L0 400 Z' fill='%230b1425'/><g fill='%23fff'><circle cx='80' cy='60' r='1.6'/><circle cx='200' cy='36' r='1.2'/><circle cx='330' cy='72' r='1.4'/><circle cx='470' cy='44' r='1.1'/><circle cx='540' cy='120' r='1.5'/></g><g transform='translate(220 250)'><polygon points='0,-46 52,20 -52,20' fill='%231b2a47' stroke='%233fd6ff' stroke-opacity='.5'/><polygon points='0,-46 14,20 -14,20' fill='%233fd6ff' opacity='.25'/></g></svg>">
+          <figcaption>《银河下的营地》· 摄于阿拉善</figcaption>
+        </figure>
+        <figure class="w-mid reveal">
+          <img alt="影像墙中图：月球表面环形山特写，长焦拍摄" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'><rect width='400' height='400' fill='%23070d1c'/><circle cx='200' cy='200' r='130' fill='%23e6e2d6'/><circle cx='200' cy='200' r='130' fill='%23c9c3b2' opacity='.4'/><g fill='%23a9a291' opacity='.75'><ellipse cx='150' cy='160' rx='34' ry='28'/><ellipse cx='250' cy='230' rx='26' ry='22'/><ellipse cx='190' cy='280' rx='18' ry='14'/><ellipse cx='266' cy='140' rx='14' ry='12'/></g><g fill='%23fff' opacity='.8'><circle cx='50' cy='50' r='1.3'/><circle cx='340' cy='80' r='1.1'/><circle cx='70' cy='330' r='1.2'/></g></svg>">
+          <figcaption>《第谷环形山》· 长焦叠片</figcaption>
+        </figure>
+        <figure class="w-sm reveal">
+          <img alt="影像墙小图：望远镜镜筒特写与散景光斑" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23131c30'/><circle cx='100' cy='100' r='66' fill='%230a1222' stroke='%233fd6ff' stroke-opacity='.6' stroke-width='3'/><circle cx='100' cy='100' r='46' fill='%231d2c4c'/><circle cx='100' cy='100' r='24' fill='%23b8ff4f' opacity='.35'/><g fill='%23ffd98a' opacity='.7'><circle cx='36' cy='140' r='8'/><circle cx='162' cy='60' r='6'/></g></svg>">
+          <figcaption>《镜筒》</figcaption>
+        </figure>
+        <figure class="w-sm reveal">
+          <img alt="影像墙小图：星轨长曝光形成的同心圆弧线" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23080f1c'/><g fill='none' stroke='%23cfd8ff' stroke-opacity='.6' stroke-width='1.4'><circle cx='100' cy='40' r='40'/><circle cx='100' cy='40' r='66'/><circle cx='100' cy='40' r='92'/><circle cx='100' cy='40' r='118'/><circle cx='100' cy='40' r='144'/></g><circle cx='100' cy='40' r='3' fill='%23b8ff4f'/></svg>">
+          <figcaption>《星轨》</figcaption>
+        </figure>
+        <figure class="w-wide reveal">
+          <img alt="影像墙宽图：高原观测站全景，群山与银河" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'><rect width='400' height='200' fill='%230c1630'/><g fill='%23fff' opacity='.8'><circle cx='40' cy='30' r='1.2'/><circle cx='120' cy='18' r='1'/><circle cx='260' cy='34' r='1.3'/><circle cx='350' cy='20' r='1'/></g><path d='M0 200 L0 130 L60 96 L110 124 L160 88 L220 126 L280 94 L340 128 L400 100 L400 200 Z' fill='%230a1224'/><g transform='translate(300 132)'><rect x='-16' y='6' width='32' height='22' fill='%231d2c4c'/><circle cx='0' cy='0' r='18' fill='%23243760' stroke='%233fd6ff' stroke-opacity='.6'/></g></svg>">
+          <figcaption>《高原观测站》· 延时序列</figcaption>
+        </figure>
+        <figure class="w-sm reveal">
+          <img alt="影像墙小图：沙漏与星尘的静物构图" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%230f1024'/><path d='M78 40 L122 40 L104 100 L122 160 L78 160 L96 100 Z' fill='none' stroke='%238a6bff' stroke-width='2.5'/><path d='M96 118 L104 118 L112 152 L88 152 Z' fill='%23b8ff4f' opacity='.8'/><path d='M86 48 L114 48 L104 92 L96 92 Z' fill='%233fd6ff' opacity='.5'/></svg>">
+          <figcaption>《沙漏》</figcaption>
+        </figure>
+        <figure class="w-sm reveal">
+          <img alt="影像墙小图：夜色中的观测日志与手电筒" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23120f20'/><rect x='40' y='60' width='90' height='96' rx='5' fill='%23f2e9db' transform='rotate(-6 85 108)'/><g stroke='%23c9b49b' stroke-width='2' transform='rotate(-6 85 108)'><path d='M54 88 L112 88'/><path d='M54 106 L112 106'/><path d='M54 124 L96 124'/></g><circle cx='150' cy='132' r='22' fill='%23ffd98a' opacity='.85'/></svg>">
+          <figcaption>《日志》</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 故事 / 随笔 + 评价 ===== -->
+  <section id="stories">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <div class="eyebrow">Voice · 社区声音</div>
+          <h2>影像之外的<em>故事与评价</em></h2>
+        </div>
+        <p>这些文字来自创作者与社区成员的真实投稿，也是我们判断内容价值的重要参考。</p>
+      </div>
+
+      <div class="quotes" style="margin-bottom:44px">
+        <article class="quote reveal">
+          <p>第一次把自己的作品上传到宇宙魔方，其实很忐忑——拍得很粗糙，对焦也不稳。但底下的评论没有人嘲笑，有位观测十年的前辈写了三百字告诉我赤道仪该怎么校准。后来我按他说的改了，第二次投稿就上了影像墙。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#3fd6ff,#8a6bff)">徐</span><div><b>徐一舟</b><span>社区成员 · 加入 2 年</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>作为一个中学物理老师，我在课堂上放过好几次「林数」的视频。学生们对引力透镜的理解速度明显变快了，因为可视化做得真的很克制，不炫技。这种内容对科普教育是有实际价值的。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#b8ff4f,#3fd6ff)">陈</span><div><b>陈老师</b><span>中学教师 · 内容使用者</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>合作拍摄过一期专题，从选题会到审片一共开了七次会。他们是真的会为了一秒钟的镜头反复确认科学表述是否准确。作为团队负责人，我很认可这种对内容的敬畏，虽然过程确实折腾。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#ff5fa2,#8a6bff)">周</span><div><b>周旻</b><span>合作制作团队负责人</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>App 端的收藏夹和网页端同步得挺顺，我习惯在地铁上把想看的先收藏，回家再用大屏看 4K。唯一的小遗憾是部分老片子的字幕还没完全重制，期待后续更新。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#ffd98a,#ff8a5c)">罗</span><div><b>罗晓</b><span>深度用户 · 观看 3 年</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>我是做平面设计的，来这儿主要是找视觉参考。宇宙魔方的影像墙配色方案很有意思，深蓝配青绿再压一点洋红，看多了会形成自己的调色直觉。希望以后能出一些可下载的色卡。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#8a6bff,#ff5fa2)">何</span><div><b>何雨</b><span>设计师 · 社区成员</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>带孩子一起看「阿暮」的日常记录，他最喜欢那集失败的观星。看完之后他自己拿本子画了一晚上的星星，虽然画得歪歪扭扭。这种温和的内容对亲子陪伴来说挺难得的。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#3fd6ff,#b8ff4f)">郑</span><div><b>郑女士</b><span>家长用户</span></div></div>
+        </article>
+      </div>
+
+      <div class="quotes">
+        <article class="quote reveal">
+          <p>写这篇随笔的时候，窗外正好在下雨。我把望远镜收进柜子，顺手翻了下这三年在社区发过的十七篇观测记录。绝大多数都以「今夜天气不佳」结尾，但恰恰是这些没拍成的夜晚，让我记住了那些一起等云散的陌生人。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#8a6bff,#3fd6ff)">沈</span><div><b>沈观星</b><span>创作者随笔 · 《等云散的人》</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>做科幻短片最难的从来不是特效，而是让人相信。观众愿意相信的那一刻，往往不是画面最华丽的一帧，而是一个人在黑暗里抬起头、什么也没说的三秒钟。我们的分镜改了三十七版，就是为了找到这三秒。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#3fd6ff,#8a6bff)">柏</span><div><b>柏舟工作室</b><span>创作笔记 · 《三十七版分镜之后》</span></div></div>
+        </article>
+        <article class="quote reveal">
+          <p>在这个平台上，我学会了一件事：把镜头对准自己也会感到陌生的领域。第一次拍星云的时候，我完全不知道自己在做什么，只是觉得那片云很美。后来有人说，你的视频让他在加班回家的路上抬头看了一眼天。那一刻我觉得值了。</p>
+          <div class="who"><span class="av" style="background:linear-gradient(135deg,#ff8a5c,#ffd98a)">阿</span><div><b>阿暮</b><span>创作者随笔 · 《抬头这件事》</span></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 企业动态 + FAQ ===== -->
+  <section id="news">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <div class="eyebrow">Updates · 企业动态</div>
+          <h2 style="margin-bottom:26px">官方发布与<em>内容更新</em></h2>
+          <div class="timeline">
+            <div class="tl-item">
+              <time>2025.11.18</time>
+              <h3>年度创作者大赛正式开放报名</h3>
+              <p>本届主题为「尺度」，鼓励创作者用影像呈现从原子到星系的跨尺度叙事。报名截止 12 月 6 日，作品提交与公开投票同步开启。</p>
+            </div>
+            <div class="tl-item">
+              <time>2025.11.09</time>
+              <h3>官方网站内容中心完成改版</h3>
+              <p>新版首页强化了专题与创作者两条主线，优化了移动端导航与搜索体验，影像墙支持尺寸自适应排版，方便社区成员快速上传作品。</p>
+            </div>
+            <div class="tl-item">
+              <time>2025.10.27</time>
+              <h3>4K 星野素材库新增 86 条片段</h3>
+              <p>本期素材库更新了一批高原与沙漠环境下的星野延时素材，创作者可在创作中心下载，用于非商业与商业剪辑（需注明来源）。</p>
+            </div>
+            <div class="tl-item">
+              <time>2025.10.12</time>
+              <h3>品牌社会责任项目「暗夜守护」启动</h3>
+              <p>联合多地中小学开展光污染科普进校园活动，首批覆盖 12 所学校，提供公益影像课程与观测器材支持。</p>
+            </div>
+            <div class="tl-item">
+              <time>2025.09.30</time>
+              <h3>深空观测手记第十一期上线</h3>
+              <p>本期记录了高海拔观测站的一次设备维护过程，并首次公开了完整的后期处理工程文件结构说明。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" id="faq">
+          <div class="eyebrow">FAQ · 帮助中心</div>
+          <h2 style="margin-bottom:26px">常见问题<em>与解答</em></h2>
+          <details>
+            <summary>如何成为宇宙魔方的签约创作者？</summary>
+            <p>登录后在个人中心提交「创作者申请」，填写擅长方向与代表作品链接。我们会在 7 个工作日内完成初审，通过后进入为期一个月的试运营期，期间可获得选题指导与拍摄资源支持。</p>
+          </details>
+          <details>
+            <summary>上传作品有什么格式与内容要求？</summary>
+            <p>支持 MP4 / MOV 格式，建议 4K 或 1080P、码率不低于 20Mbps。内容需为原创或拥有合法授权，涉及科学表述的内容请尽量注明参考来源，以便审片时核对。</p>
+          </details>
+          <details>
+            <summary>内容被退回的常见原因有哪些？</summary>
+            <p>主要包括画质不达标、素材来源不明、存在未授权音乐、科学表述明显错误、以及画面中出现第三方平台水印等。具体原因会在作品管理页给出说明，修改后可重新提交。</p>
+          </details>
+          <details>
+            <summary>如何参与年度创作者大赛的投票？</summary>
+            <p>注册并完成实名认证的社区成员均可参与公开投票，每个账号每天可为单个作品投出一票。专业评审团评分将与公众投票按 6:4 的比例加权计算最终结果。</p>
+          </details>
+          <details>
+            <summary>影像墙的作品是如何筛选的？</summary>
+            <p>影像墙每周更新一次，由内容委员会从近期投稿中挑选，重点考察构图、叙事完整度与表达的独特性，不单纯依据播放量。入选作品会在创作者主页获得对应标识。</p>
+          </details>
+          <details>
+            <summary>素材库的片段可以用于商业项目吗？</summary>
+            <p>可以，但需要在片尾或简介中注明素材来源与片段编号。部分标注「仅限非商业」的片段不可用于商业用途，下载前请留意素材详情页的授权说明。</p>
+          </details>
+          <details>
+            <summary>遇到播放问题或账号异常怎么办？</summary>
+            <p>建议先尝试刷新页面或更换浏览器。若问题持续，请通过页面底部的联系邮箱提交问题描述、发生时间与设备信息，我们会在两个工作日内回复。</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 合作 + CTA ===== -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="reveal" style="margin-bottom:40px">
+        <div class="eyebrow">Partners · 合作伙伴</div>
+        <h2 style="margin-bottom:24px">与我们并肩的<em>合作品牌与机构</em></h2>
+        <div class="partners">
+          <div class="partner">星野光学</div>
+          <div class="partner">高原观测站</div>
+          <div class="partner">光年影像器材</div>
+          <div class="partner">静夜科普基金</div>
+          <div class="partner">南天文学社</div>
+          <div class="partner">云脊制作</div>
+        </div>
+      </div>
+
+      <div class="cta reveal">
+        <h2>让每一帧未知，都被认真对待</h2>
+        <p>无论你是观测多年的爱好者、刚拿起相机的学生，还是希望寻找优质影像内容的机构，宇宙魔方官方网站都欢迎你加入这个持续成长的社区。我们提供投稿入口、创作指导与商业合作通道，也欢迎一切关于内容的建议与批评。</p>
+        <div class="hero-actions">
+          <a href="mailto:hello@cosmiccube.studio" class="btn btn-primary">商务与合作咨询</a>
+          <button class="btn btn-ghost" data-open="submit">我要投稿</button>
+          <button class="btn btn-ghost" data-open="feedback">意见反馈</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo" style="font-size:18px"><span class="logo-mark" style="width:32px;height:32px"></span><span>宇宙魔方<small>COSMIC CUBE</small></span></div>
+        <p>宇宙魔方官方网站 · 原创科幻影像品牌。我们深耕科幻与天文影像领域，持续运营高品质内容社区，与创作者、科研机构共建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#focus">焦点视频</a></li>
+          <li><a href="#topics">专题企划</a></li>
+          <li><a href="#wall">影像墙</a></li>
+          <li><a href="#stream">热门视频流</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#creators">创作者矩阵</a></li>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#faq">帮助中心</a></li>
+          <li><a href="#contact">合作联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系</h4>
+        <ul>
+          <li>内容合作：content@cosmiccube.studio</li>
+          <li>商务咨询：hello@cosmiccube.studio</li>
+          <li>媒体联络：press@cosmiccube.studio</li>
+          <li>工作时间：周一至周五 10:00-19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 宇宙魔方 Cosmic Cube 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号占位 · 广播电视节目制作经营许可证占位</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+<div id="toast"></div>
+
+<!-- 评论弹窗 -->
+<div class="modal-mask" id="modal-comment">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>发表评论</h3>
+    <p class="sub">友善、具体、有建设性的评论更容易被创作者看到。</p>
+    <label>昵称</label>
+    <input type="text" placeholder="你的社区昵称" id="cName">
+    <label>评论内容</label>
+    <textarea placeholder="说说你的看法，比如某个镜头你是怎么理解的……" id="cText"></textarea>
+    <div class="modal-foot">
+      <button class="btn btn-ghost btn-sm" data-close>取消</button>
+      <button class="btn btn-primary btn-sm" id="cSend">发布评论</button>
+    </div>
+  </div>
+</div>
+
+<!-- 投稿弹窗 -->
+<div class="modal-mask" id="modal-submit">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>投稿 / 创作者申请</h3>
+    <p class="sub">填写基本信息，内容编辑会在三个工作日内与你联系。</p>
+    <label>昵称或团队名</label>
+    <input type="text" placeholder="例如：柏舟工作室" id="sName">
+    <label>擅长方向</label>
+    <select id="sField">
+      <option>深空摄影与观测纪实</option>
+      <option>天文科普与可视化</option>
+      <option>概念短片与特效制作</option>
+      <option>日常记录与治愈影像</option>
+      <option>后期剪辑与音效设计</option>
+    </select>
+    <label>作品说明</label>
+    <textarea placeholder="简单描述你的作品内容、拍摄条件与创作动机" id="sDesc"></textarea>
+    <div class="modal-foot">
+      <button class="btn btn-ghost btn-sm" data-close>取消</button>
+      <button class="btn btn-primary btn-sm" id="sSend">提交申请</button>
+    </div>
+  </div>
+</div>
+
+<!-- 反馈弹窗 -->
+<div class="modal-mask" id="modal-feedback">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3>意见反馈</h3>
+    <p class="sub">你的反馈会直接进入内容与产品团队的收件箱。</p>
+    <label>问题类型</label>
+    <select id="fType">
+      <option>内容质量与科学表述</option>
+      <option>播放与功能异常</option>
+      <option>素材授权与版权</option>
+      <option>社区氛围与评论管理</option>
+      <option>其他建议</option>
+    </select>
+    <label>详细描述</label>
+    <textarea placeholder="请尽量描述清楚发生的位置与时间" id="fText"></textarea>
+    <div class="modal-foot">
+      <button class="btn btn-ghost btn-sm" data-close>取消</button>
+      <button class="btn btn-primary btn-sm" id="fSend">提交反馈</button>
+    </div>
+  </div>
+</div>
+
+<!-- 作者弹窗 -->
+<div class="modal-mask" id="modal-author">
+  <div class="modal">
+    <button class="close" data-close>×</button>
+    <h3 id="aName">创作者</h3>
+    <p class="sub" id="aField">擅长领域</p>
+    <p style="font-size:13.5px;color:var(--muted);line-height:1.85" id="aDesc"></p>
+    <div class="modal-foot">
+      <button class="btn btn-ghost btn-sm" data-close>关闭</button>
+      <button class="btn btn-primary btn-sm" id="aFollow">关注创作者</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ===== Toast ===== */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ===== 移动端导航 ===== */
+  var burger = document.getElementById('burger');
+  var mainnav = document.getElementById('mainnav');
+  if(burger){
+    burger.addEventListener('click', function(){
+      mainnav.classList.toggle('open');
+      burger.textContent = mainnav.classList.contains('open') ? '×' : '☰';
+    });
+  }
+  mainnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mainnav.classList.remove('open');
+      burger.textContent = '☰';
+      mainnav.querySelectorAll('a').forEach(function(x){ x.classList.remove('active'); });
+      a.classList.add('active');
+    });
+  });
+
+  /* ===== 搜索 ===== */
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var searchHint = document.getElementById('searchHint');
+  var searchMap = {
+    '深空':'找到 1 个专题：深空观测手记',
+    '星':'找到 3 条内容：星尘叙事 / 星轨 / 星野素材库',
+    '望远镜':'找到 2 条内容：高原观测 / 镜筒',
+    '创作者':'找到 4 位创作者，可在「创作者」板块查看',
+    '大赛':'年度创作者大赛报名中，剩余 18 天',
+    '科普':'找到 2 条科普视频：土星环 / 引力透镜',
+    '沈观星':'创作者沈观星，86 部作品',
+    '音效':'找到 1 条内容：声音先于画面'
+  };
+  function doSearch(){
+    var q = (searchInput.value || '').trim();
+    if(!q){
+      searchHint.style.display = 'block';
+      searchHint.textContent = '请输入关键词，例如：深空、科普、创作者';
+      setTimeout(function(){ searchHint.style.display='none'; }, 2600);
+      return;
+    }
+    var hit = '';
+    Object.keys(searchMap).forEach(function(k){
+      if(q.indexOf(k) !== -1 || k.indexOf(q) !== -1){ hit = searchMap[k]; }
+    });
+    if(hit){
+      searchHint.style.display='block';
+      searchHint.textContent = '「' + q + '」' + hit;
+      toast('已为你定位到相关内容');
+    }else{
+      searchHint.style.display='block';
+      searchHint.textContent = '「' + q + '」暂无完全匹配，试试：深空、科普、大赛';
+      toast('暂无匹配结果');
+    }
+    clearTimeout(searchHint._t);
+    searchHint._t = setTimeout(function(){ searchHint.style.display='none'; }, 3600);
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){ if(e.key === 'Enter') doSearch(); });
+
+  /* ===== 点赞 / 收藏 ===== */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-like]');
+    if(likeBtn){
+      var numEl = likeBtn.querySelector('.num');
+      var n = parseInt(numEl.textContent.replace(/[^\d]/g,''),10) || 0;
+      if(likeBtn.classList.contains('liked')){
+        likeBtn.classList.remove('liked');
+        numEl.textContent = Math.max(0, n - 1);
+        toast('已取消点赞');
+      }else{
+        likeBtn.classList.add('liked');
+        numEl.textContent = n + 1;
+        toast('点赞成功，感谢支持');
+      }
+      return;
+    }
+    var saveBtn = e.target.closest('[data-save]');
+    if(saveBtn){
+      saveBtn.classList.toggle('saved');
+      if(saveBtn.classList.contains('saved')){
+        if(!saveBtn.dataset.txt) saveBtn.dataset.txt = saveBtn.textContent;
+        saveBtn.textContent = '★ 已收藏';
+        toast('已加入收藏夹');
+      }else{
+        saveBtn.textContent = saveBtn.dataset.txt || '☆';
+        toast('已取消收藏');
+      }
+      return;
+    }
+  });
+
+  /* ===== 分享 ===== */
+  document.addEventListener('click', function(e){
+    var s = e.target.closest('[data-share]');
+    if(!s) return;
+    var url = 'https://cosmiccube.example/home';
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        toast('链接已复制，可分享至微信 / 微博 / QQ');
+      }).catch(function(){
+        toast('请手动复制地址栏链接进行分享');
+      });
+    }else{
+      toast('请手动复制地址栏链接进行分享');
+    }
+  });
+
+  /* ===== 弹窗系统 ===== */
+  var modals = {
+    comment: document.getElementById('modal-comment'),
+    submit: document.getElementById('modal-submit'),
+    feedback: document.getElementById('modal-feedback'),
+    author: document.getElementById('modal-author')
+  };
+  function openModal(name){
+    Object.keys(modals).forEach(function(k){
+      modals[k].classList.remove('show');
+    });
+    if(modals[name]) modals[name].classList.add('show');
+  }
+  function closeAll(){
+    Object.keys(modals).forEach(function(k){ modals[k].classList.remove('show'); });
+  }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-open]');
+    if(opener){
+      openModal(opener.getAttribute('data-open'));
+      return;
+    }
+    if(e.target.closest('[data-close]')){ closeAll(); }
+    if(e.target.classList.contains('modal-mask')){ closeAll(); }
+  });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeAll(); });
+
+  /* ===== 弹窗内提交 ===== */
+  document.getElementById('cSend').addEventListener('click', function(){
+    var n = document.getElementById('cName').value.trim();
+    var t = document.getElementById('cText').value.trim();
+    if(!t){ toast('请先写一点评论内容'); return; }
+    closeAll();
+    toast('评论已提交，等待审核后展示');
+    document.getElementById('cText').value = '';
+    if(!n) toast('提示：未填写昵称，将显示为匿名用户');
+  });
+  document.getElementById('sSend').addEventListener('click', function(){
+    var n = document.getElementById('sName').value.trim();
+    if(!n){ toast('请填写昵称或团队名'); return; }
+    closeAll();
+    toast('申请已提交，编辑会在三个工作日内联系你');
+    document.getElementById('sName').value = '';
+    document.getElementById('sDesc').value = '';
+  });
+  document.getElementById('fSend').addEventListener('click', function(){
+    var t = document.getElementById('fText').value.trim();
+    if(t.length < 5){ toast('请补充更具体的描述'); return; }
+    closeAll();
+    toast('反馈已收到，感谢你的帮助');
+    document.getElementById('fText').value = '';
+  });
+
+  /* ===== 创作者弹窗 ===== */
+  document.querySelectorAll('.creator').forEach(function(card){
+    card.addEventListener('click', function(){
+      document.getElementById('aName').textContent = card.dataset.name;
+      document.getElementById('aField').textContent = card.dataset.field;
+      document.getElementById('aDesc').textContent = card.dataset.desc;
+      openModal('author');
+    });
+  });
+  var followed = false;
+  document.getElementById('aFollow').addEventListener('click', function(){
+    followed = !followed;
+    this.textContent = followed ? '已关注' : '关注创作者';
+    toast(followed ? '关注成功，将收到更新提醒' : '已取消关注');
+  });
+
+  /* ===== 标签筛选 ===== */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var videoCards = document.querySelectorAll('.video-card');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){
+        b.style.borderColor = 'var(--line2)';
+        b.style.color = '';
+      });
+      btn.style.borderColor = 'var(--cyan)';
+      btn.style.color = 'var(--cyan)';
+      var f = btn.getAttribute('data-filter');
+      videoCards.forEach(function(card){
+        var show = (f === 'all') || (card.getAttribute('data-cat') === f);
+        card.style.display = show ? '' : 'none';
+      });
+      toast(f === 'all' ? '显示全部内容' : '已筛选：' + btn.textContent);
+    });
+  });
+
+  /* ===== 数字滚动 ===== */
+  var counted = false;
+  function runCount(){
+    if(counted) return;
+    var stats = document.querySelectorAll('[data-count]');
+    if(!stats.length) return;
+    var first = stats[0].getBoundingClientRect();
+    if(first.top < window.innerHeight - 80){
+      counted = true;
+      stats.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10);
+        var cur = 0;
+        var step = Math.max(1, Math.ceil(target / 42));
+        var timer = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(timer); }
+          el.textContent = cur;
+        }, 24);
+      });
+    }
+  }
+
+  /* ===== 回到顶部 ===== */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 520){ toTop.classList.add('show'); }
+    else{ toTop.classList.remove('show'); }
+    runCount();
+  });
+  toTop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ===== 滚动显现 ===== */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  runCount();
+})();
+</script>
+</body>
+            </html>
