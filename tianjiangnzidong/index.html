@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>天降女子动漫 - 官方品牌门户 - 匠心原创陪伴成长</title>
+<meta name="description" content="天降女子动漫官方网站，深耕女性向奇幻原创动画领域，为企业与创作者搭建高品质内容生态，持续运营值得信赖的动漫品牌社区。">
+<style>
+:root{
+  --plum:#2b1a3d;
+  --plum-2:#3a2553;
+  --rose:#e86a92;
+  --rose-soft:#f7b8cd;
+  --gold:#f0c26b;
+  --mint:#7fe0c4;
+  --paper:#fdf8f6;
+  --ink:#241733;
+  --ink-soft:#5a4a6b;
+  --line:rgba(43,26,61,.12);
+  --shadow:0 18px 40px -22px rgba(43,26,61,.45);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:132px}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;line-height:1.3;font-weight:700}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* ---------- 吸顶容器 ---------- */
+.sticky-shell{position:sticky;top:0;z-index:120}
+.notice-bar{
+  background:linear-gradient(90deg,var(--plum) 0%,var(--plum-2) 55%,#4a2c62 100%);
+  color:#f6ecff;
+  font-size:13px;
+  padding:8px 18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  overflow:hidden;
+}
+.notice-bar .nb-tag{
+  flex:0 0 auto;
+  background:var(--rose);
+  color:#fff;
+  font-size:11px;
+  letter-spacing:.12em;
+  padding:3px 9px;
+  border-radius:999px;
+  font-weight:700;
+}
+.notice-track{flex:1 1 auto;overflow:hidden;white-space:nowrap;position:relative;height:22px}
+.notice-track ul{
+  position:absolute;
+  inset:0;
+  animation:noticeScroll 26s linear infinite;
+}
+.notice-track li{
+  height:22px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  color:#efe2ff;
+}
+.notice-track li b{color:var(--gold);font-weight:600}
+@keyframes noticeScroll{
+  0%{transform:translateY(0)}
+  100%{transform:translateY(-50%)}
+}
+.notice-track:hover ul{animation-play-state:paused}
+
+/* ---------- 页头 ---------- */
+.site-header{
+  background:rgba(253,248,246,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1220px;
+  margin:0 auto;
+  padding:12px 22px;
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.brand-mark{
+  width:42px;height:42px;border-radius:13px;
+  background:conic-gradient(from 210deg,var(--rose),var(--gold),var(--mint),var(--rose));
+  display:grid;place-items:center;
+  color:#fff;font-weight:800;font-size:18px;
+  box-shadow:0 8px 18px -9px rgba(232,106,146,.9);
+}
+.brand-name{font-size:19px;font-weight:800;letter-spacing:.02em}
+.brand-sub{font-size:11px;color:var(--ink-soft);letter-spacing:.22em}
+.main-nav{flex:1 1 auto}
+.main-nav ul{display:flex;flex-wrap:wrap;gap:4px}
+.main-nav a{
+  display:block;font-size:14.5px;padding:8px 12px;border-radius:10px;
+  color:var(--ink-soft);transition:.2s;font-weight:500;
+}
+.main-nav a:hover{background:rgba(232,106,146,.12);color:var(--plum)}
+.header-tools{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.search-box{
+  display:flex;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:4px 4px 4px 14px;gap:6px;
+  box-shadow:0 6px 16px -14px rgba(43,26,61,.6);
+}
+.search-box input{
+  border:0;outline:0;background:transparent;width:150px;font-size:13.5px;color:var(--ink);
+}
+.search-box button{
+  border:0;border-radius:999px;background:var(--plum);color:#fff;
+  font-size:12.5px;padding:6px 13px;font-weight:600;
+}
+.search-hint{
+  position:absolute;top:100%;right:0;margin-top:6px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);padding:8px;font-size:13px;color:var(--ink-soft);
+  display:none;min-width:220px;z-index:130;
+}
+.search-hint.show{display:block}
+.tool-wrap{position:relative}
+.btn-ghost{
+  border:1px solid var(--line);background:#fff;border-radius:999px;
+  font-size:13px;padding:8px 15px;color:var(--ink);font-weight:600;
+  transition:.2s;
+}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose)}
+.btn-solid{
+  border:0;border-radius:999px;background:linear-gradient(120deg,var(--rose),#d4557c);
+  color:#fff;font-size:13px;padding:9px 18px;font-weight:700;
+  box-shadow:0 12px 24px -14px rgba(232,106,146,.95);
+  transition:.2s;
+}
+.btn-solid:hover{transform:translateY(-1px)}
+.nav-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px;font-size:16px}
+
+/* ---------- 通用版心 ---------- */
+.wrap{max-width:1220px;margin:0 auto;padding:0 22px}
+section{scroll-margin-top:132px}
+.section-head{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
+  margin-bottom:26px;flex-wrap:wrap;
+}
+.eyebrow{
+  font-size:11.5px;letter-spacing:.3em;color:var(--rose);font-weight:700;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.section-head h2{font-size:clamp(22px,3vw,30px)}
+.section-head p{font-size:14px;color:var(--ink-soft);max-width:540px}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(900px 420px at 88% -10%,rgba(232,106,146,.22),transparent 62%),
+    radial-gradient(700px 380px at 6% 110%,rgba(127,224,196,.20),transparent 60%),
+    linear-gradient(160deg,#fdf8f6 0%,#f7eff5 60%,#f1eaf5 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1220px;margin:0 auto;padding:58px 22px 64px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+}
+.hero-copy h1{
+  font-size:clamp(30px,4.6vw,46px);
+  letter-spacing:.01em;
+  margin-bottom:16px;
+}
+.hero-copy h1 span{
+  background:linear-gradient(100deg,var(--rose),#b04fd6 60%,var(--gold));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,106,146,.12);color:#a33459;
+  font-size:12.5px;font-weight:700;letter-spacing:.08em;
+  padding:6px 13px;border-radius:999px;margin-bottom:18px;
+}
+.hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--rose);display:block}
+.hero-desc{font-size:15px;color:var(--ink-soft);max-width:560px;margin-bottom:24px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:520px}
+.stat{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:13px 14px;box-shadow:0 12px 26px -24px rgba(43,26,61,.7);
+}
+.stat b{display:block;font-size:22px;color:var(--plum);letter-spacing:.01em}
+.stat small{font-size:12px;color:var(--ink-soft)}
+.hero-visual{position:relative}
+.hero-frame{
+  border-radius:26px;overflow:hidden;position:relative;
+  box-shadow:0 34px 70px -34px rgba(43,26,61,.55);
+  border:1px solid rgba(255,255,255,.6);
+}
+.hero-frame img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.hero-badge{
+  position:absolute;left:-16px;bottom:26px;
+  background:#fff;border-radius:16px;padding:11px 16px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;
+  font-size:12.5px;font-weight:600;
+}
+.hero-badge .dot{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--mint),var(--gold));display:grid;place-items:center;color:#20411f;font-size:11px;font-weight:800}
+.hero-float{
+  position:absolute;right:-10px;top:22px;
+  background:rgba(43,26,61,.9);color:#f7e9ff;
+  border-radius:14px;padding:9px 14px;font-size:12px;letter-spacing:.06em;
+  backdrop-filter:blur(6px);
+}
+
+/* ---------- 焦点内容 ---------- */
+.focus{padding:64px 0}
+.focus-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:20px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(232,106,146,.35)}
+.cover{position:relative;overflow:hidden;background:#241733}
+.cover img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s}
+.card:hover .cover img{transform:scale(1.045)}
+.play-badge{
+  position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;
+}
+.play-badge span{
+  width:46px;height:46px;border-radius:50%;
+  background:rgba(255,255,255,.9);display:grid;place-items:center;
+  box-shadow:0 10px 24px -10px rgba(0,0,0,.6);
+}
+.play-badge span::before{
+  content:"";border-style:solid;border-width:8px 0 8px 13px;
+  border-color:transparent transparent transparent var(--plum);
+  margin-left:4px;
+}
+.cover-tag{
+  position:absolute;left:10px;top:10px;
+  background:rgba(43,26,61,.82);color:#fff;font-size:11px;
+  padding:3px 9px;border-radius:999px;letter-spacing:.06em;
+}
+.cover-meta{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(transparent,rgba(20,10,30,.82));
+  color:#fff;font-size:11.5px;padding:18px 11px 8px;
+  display:flex;justify-content:space-between;gap:8px;
+}
+.card-body{padding:15px 16px 17px}
+.card-body h3{font-size:15.5px;margin-bottom:7px}
+.card-body p{font-size:13px;color:var(--ink-soft);margin-bottom:11px}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tag{
+  font-size:11px;padding:2px 9px;border-radius:999px;
+  background:rgba(127,224,196,.18);color:#1f6b56;font-weight:600;
+}
+.tag.rose{background:rgba(232,106,146,.14);color:#a33459}
+.tag.gold{background:rgba(240,194,107,.22);color:#8a6109}
+.card-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  font-size:12px;color:var(--ink-soft);border-top:1px dashed var(--line);padding-top:11px;
+}
+.author-mini{display:flex;align-items:center;gap:7px;cursor:pointer}
+.avatar{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  color:#fff;font-size:11.5px;font-weight:800;flex:0 0 auto;
+}
+.act-group{display:flex;gap:4px}
+.act{
+  border:0;background:transparent;font-size:12px;color:var(--ink-soft);
+  display:flex;align-items:center;gap:4px;padding:4px 7px;border-radius:8px;transition:.2s;
+}
+.act:hover{background:rgba(232,106,146,.12);color:var(--rose)}
+.act.liked{color:var(--rose);font-weight:700}
+.act.saved{color:#b04fd6;font-weight:700}
+.focus-main .card-body h3{font-size:19px}
+
+/* ---------- 专题 ---------- */
+.topics{
+  padding:64px 0;
+  background:linear-gradient(180deg,#f7eff5 0%,#fdf8f6 100%);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.topic{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;
+  color:#fff;padding:18px;box-shadow:var(--shadow);
+}
+.topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.topic::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(170deg,rgba(43,26,61,.12) 10%,rgba(30,14,44,.9) 100%);
+}
+.topic>*{position:relative;z-index:2}
+.topic h3{font-size:16.5px;margin-bottom:6px}
+.topic p{font-size:12.5px;color:#ead9f5;margin-bottom:10px}
+.topic .status{
+  align-self:flex-start;font-size:11px;padding:3px 9px;border-radius:999px;
+  background:rgba(240,194,107,.9);color:#3a2553;font-weight:700;
+}
+.topic:nth-child(2n) .status{background:rgba(127,224,196,.92);color:#164a3a}
+
+/* ---------- 创作者 ---------- */
+.creators{padding:64px 0}
+.creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.creator{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;display:flex;gap:14px;transition:.25s;
+}
+.creator:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.creator .avatar{width:52px;height:52px;font-size:17px}
+.creator-info h3{font-size:15.5px;display:flex;align-items:center;gap:7px}
+.v-badge{
+  font-size:10px;background:rgba(232,106,146,.15);color:#a33459;
+  padding:1px 6px;border-radius:6px;font-weight:700;
+}
+.creator-info .field{font-size:12px;color:var(--rose);font-weight:600;margin:2px 0 7px}
+.creator-info p{font-size:12.5px;color:var(--ink-soft);margin-bottom:9px}
+.creator-stats{display:flex;gap:14px;font-size:12px;color:var(--ink-soft)}
+.creator-stats b{color:var(--plum)}
+
+/* ---------- 影像墙 ---------- */
+.wall{padding:64px 0;background:linear-gradient(180deg,#fdf8f6,#f4edf7)}
+.wall-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.wall-item{
+  position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);
+  background:#241733;
+}
+.wall-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.wall-item:hover img{transform:scale(1.06)}
+.wall-item figcaption{
+  position:absolute;inset:auto 0 0 0;
+  background:linear-gradient(transparent,rgba(25,12,38,.88));
+  color:#fff;font-size:11.5px;padding:22px 10px 9px;
+}
+.wall-item:nth-child(1){grid-column:span 3;grid-row:span 2}
+.wall-item:nth-child(2){grid-column:span 3}
+.wall-item:nth-child(3){grid-column:span 3}
+.wall-item:nth-child(4){grid-column:span 2}
+.wall-item:nth-child(5){grid-column:span 2}
+.wall-item:nth-child(6){grid-column:span 2}
+.wall-item:nth-child(7){grid-column:span 2}
+.wall-item:nth-child(8){grid-column:span 2}
+.wall-item:nth-child(9){grid-column:span 2}
+.wall-item:nth-child(1) img,.wall-item:nth-child(2) img,.wall-item:nth-child(3) img{aspect-ratio:16/10}
+.wall-item:nth-child(n+4) img{aspect-ratio:4/3}
+
+/* ---------- 评价 ---------- */
+.reviews{padding:64px 0}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px;font-size:13.5px;color:var(--ink-soft);
+}
+.review .stars{color:#e8a33a;font-size:12.5px;letter-spacing:2px;margin-bottom:8px}
+.review p{margin-bottom:12px}
+.review-user{display:flex;align-items:center;gap:9px}
+.review-user b{font-size:13px;color:var(--plum)}
+.review-user small{display:block;font-size:11.5px;color:var(--ink-soft)}
+.review:nth-child(4n+1){background:linear-gradient(160deg,#fff,#fdf2f6)}
+.review:nth-child(4n+3){background:linear-gradient(160deg,#fff,#f0fbf7)}
+
+/* ---------- 企业动态 ---------- */
+.news{padding:64px 0;background:linear-gradient(180deg,#f4edf7,#fdf8f6);border-top:1px solid var(--line)}
+.news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.news-item{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;display:flex;gap:16px;align-items:flex-start;transition:.2s;
+}
+.news-item:hover{border-color:rgba(232,106,146,.4);box-shadow:var(--shadow)}
+.news-date{
+  flex:0 0 auto;text-align:center;background:rgba(232,106,146,.1);
+  color:#a33459;border-radius:11px;padding:7px 10px;line-height:1.2;
+}
+.news-date b{display:block;font-size:17px}
+.news-date small{font-size:10.5px}
+.news-item h3{font-size:14.5px;margin-bottom:4px}
+.news-item p{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- 合作伙伴 ---------- */
+.partners{padding:52px 0}
+.partner-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.partner{
+  border:1px solid var(--line);background:#fff;border-radius:12px;
+  padding:12px 22px;font-size:13.5px;font-weight:600;color:var(--ink-soft);
+  letter-spacing:.04em;transition:.2s;
+}
+.partner:hover{color:var(--rose);border-color:rgba(232,106,146,.4)}
+
+/* ---------- FAQ ---------- */
+.faq{padding:64px 0;background:linear-gradient(180deg,#fdf8f6,#f7f0fa)}
+.faq-wrap{max-width:900px;margin:0 auto}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:15px 18px;margin-bottom:11px;transition:.2s;
+}
+details[open]{border-color:rgba(232,106,146,.4);box-shadow:var(--shadow)}
+summary{
+  cursor:pointer;font-weight:600;font-size:14.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";color:var(--rose);font-weight:800;font-size:15px}
+details[open] summary::after{content:"－"}
+details p{font-size:13.5px;color:var(--ink-soft);margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+
+/* ---------- 联系/投稿 ---------- */
+.contact{padding:64px 0 78px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
+.contact-card{
+  background:linear-gradient(150deg,var(--plum),#452a63 65%,#5a2f74);
+  color:#f4e9ff;border-radius:22px;padding:34px;position:relative;overflow:hidden;
+}
+.contact-card::after{
+  content:"";position:absolute;right:-70px;bottom:-90px;width:260px;height:260px;
+  border-radius:50%;background:radial-gradient(circle,rgba(232,106,146,.5),transparent 70%);
+}
+.contact-card h2{font-size:26px;margin-bottom:12px;position:relative;z-index:1}
+.contact-card p{font-size:14px;color:#dcc9ee;max-width:420px;margin-bottom:22px;position:relative;z-index:1}
+.contact-actions{display:flex;flex-wrap:wrap;gap:11px;position:relative;z-index:1}
+.contact-actions .btn-ghost{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
+.contact-actions .btn-ghost:hover{background:rgba(255,255,255,.2);color:#fff;border-color:#fff}
+.contact-actions .btn-solid{background:linear-gradient(120deg,var(--gold),#e5a840);color:#3a2553}
+.info-card{
+  background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;
+  display:flex;flex-direction:column;gap:16px;justify-content:center;
+}
+.info-row{display:flex;gap:13px;align-items:flex-start;font-size:13.5px}
+.info-row .ic{
+  width:36px;height:36px;border-radius:11px;flex:0 0 auto;
+  background:rgba(232,106,146,.12);display:grid;place-items:center;
+  color:#a33459;font-weight:800;font-size:14px;
+}
+.info-row b{display:block;font-size:13.5px;color:var(--plum)}
+.info-row span{color:var(--ink-soft);font-size:12.8px}
+
+/* ---------- 页脚 ---------- */
+.site-footer{background:#1d1229;color:#bcaecb;padding:46px 0 26px}
+.footer-top{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;margin-bottom:30px}
+.footer-brand .brand-name{color:#fff}
+.footer-brand p{font-size:12.8px;margin-top:12px;max-width:320px;color:#a596b6}
+.footer-col h4{font-size:13.5px;color:#fff;margin-bottom:12px}
+.footer-col a{display:block;font-size:12.8px;padding:4px 0;color:#a596b6;transition:.2s}
+.footer-col a:hover{color:var(--rose-soft)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);padding-top:18px;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+  font-size:12px;color:#8b7d9c;
+}
+
+/* ---------- 回到顶部 & Toast ---------- */
+.to-top{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  border:0;background:linear-gradient(135deg,var(--rose),#b04fd6);color:#fff;
+  font-size:19px;box-shadow:0 16px 30px -14px rgba(176,79,214,.9);
+  opacity:0;pointer-events:none;transition:.3s;z-index:200;
+}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(-3px)}
+.toast{
+  position:fixed;left:50%;bottom:36px;transform:translate(-50%,18px);
+  background:rgba(29,18,41,.95);color:#fff;font-size:13.5px;
+  padding:11px 20px;border-radius:999px;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:.28s;z-index:300;white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- 弹窗 ---------- */
+.modal-mask{
+  position:fixed;inset:0;background:rgba(24,12,36,.62);backdrop-filter:blur(4px);
+  display:none;place-items:center;z-index:400;padding:22px;
+}
+.modal-mask.show{display:grid}
+.modal{
+  background:#fff;border-radius:20px;max-width:460px;width:100%;padding:26px;
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.6);animation:pop .25s ease;
+  max-height:86vh;overflow:auto;
+}
+@keyframes pop{from{transform:translateY(14px) scale(.97);opacity:0}to{transform:none;opacity:1}}
+.modal h3{font-size:18px;margin-bottom:8px}
+.modal p{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px}
+.modal textarea,.modal input{
+  width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 12px;
+  font-size:13.5px;font-family:inherit;outline:0;margin-bottom:12px;background:#fdf8f6;
+}
+.modal textarea{min-height:94px;resize:vertical}
+.modal textarea:focus,.modal input:focus{border-color:var(--rose);background:#fff}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:4px}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1040px){
+  .hero-inner{grid-template-columns:1fr;gap:34px}
+  .hero-frame img{aspect-ratio:16/10}
+  .focus-grid{grid-template-columns:1fr 1fr}
+  .focus-main{grid-column:span 2}
+  .topic-grid{grid-template-columns:repeat(2,1fr)}
+  .creator-grid{grid-template-columns:repeat(2,1fr)}
+  .review-grid{grid-template-columns:repeat(2,1fr)}
+  .wall-grid{grid-template-columns:repeat(4,1fr)}
+  .wall-item:nth-child(1){grid-column:span 2;grid-row:span 1}
+  .wall-item:nth-child(2){grid-column:span 2}
+  .wall-item:nth-child(3){grid-column:span 4}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .nav-toggle{display:block}
+  .main-nav{
+    position:absolute;left:0;right:0;top:100%;
+    background:#fdf8f6;border-bottom:1px solid var(--line);
+    padding:10px 22px 16px;display:none;box-shadow:var(--shadow);
+  }
+  .main-nav.open{display:block}
+  .main-nav ul{flex-direction:column;gap:2px}
+  .header-inner{position:relative;flex-wrap:wrap;gap:14px}
+  .search-box input{width:110px}
+  .contact-grid{grid-template-columns:1fr}
+  .news-list{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .focus-grid{grid-template-columns:1fr}
+  .focus-main{grid-column:span 1}
+  .creator-grid,.review-grid,.topic-grid{grid-template-columns:1fr}
+  .wall-grid{grid-template-columns:repeat(2,1fr)}
+  .wall-item:nth-child(n){grid-column:span 1;grid-row:span 1}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  .section-head{align-items:flex-start}
+  .header-tools{width:100%}
+  .search-box{flex:1 1 auto}
+  .search-box input{width:100%}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-shell">
+  <div class="notice-bar" aria-label="官方更新公告">
+    <span class="nb-tag">官方发布</span>
+    <div class="notice-track">
+      <ul id="noticeList">
+        <li><b>新增</b>《雪落无声时》第 3 集幕后花絮已上线，含分镜手稿解读</li>
+        <li><b>更新</b>「天降女子」创作者扶持计划第二期开放报名，名额 60 位</li>
+        <li><b>公告</b>年度原创企划《千夜灯行》角色设定集开始预约</li>
+        <li><b>新增</b>《雪落无声时》第 3 集幕后花絮已上线，含分镜手稿解读</li>
+        <li><b>更新</b>「天降女子」创作者扶持计划第二期开放报名，名额 60 位</li>
+        <li><b>公告</b>年度原创企划《千夜灯行》角色设定集开始预约</li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="天降女子动漫官方网站首页">
+        <span class="brand-mark">天</span>
+        <span>
+          <span class="brand-name">天降女子动漫</span>
+          <span class="brand-sub">OFFICIAL</span>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <ul>
+          <li><a href="#top">首页</a></li>
+          <li><a href="#focus">焦点内容</a></li>
+          <li><a href="#topics">专题企划</a></li>
+          <li><a href="#creators">创作者</a></li>
+          <li><a href="#wall">影像墙</a></li>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#faq">帮助</a></li>
+          <li><a href="#contact">联系</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <div class="tool-wrap">
+          <form class="search-box" id="searchForm" role="search">
+            <input type="text" id="searchInput" placeholder="搜索作品 / 创作者 / 专题" aria-label="站内搜索">
+            <button type="submit">搜索</button>
+          </form>
+          <div class="search-hint" id="searchHint"></div>
+        </div>
+        <button class="btn-solid" type="button" data-modal="submitModal">投稿入口</button>
+        <button class="nav-toggle" id="navToggle" aria-label="展开导航" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-kicker"><i></i>官方网站 · 女性向奇幻原创动画品牌</span>
+        <h1>天降女子动漫<span>：把奇幻写进日常</span></h1>
+        <p class="hero-desc">
+          天降女子动漫是深耕女性向奇幻题材的原创动画品牌官方网站。自 2018 年创立以来，我们以「温柔而有力量」为创作信条，
+          持续为企业与创作者搭建高品质内容生态：从短片实验、系列剧集到角色企划，用真实、温暖、多元的影像讲述少女与世界相遇的故事。
+          作为行业领先的原创动画平台，团队坚持原创、正版、高清的制作标准，累计上线 210 余部作品，签约创作者 380 位，
+          让每一份匠心都能被看见，也让每一次陪伴都有回响。
+        </p>
+        <div class="hero-actions">
+          <a class="btn-solid" href="#focus">浏览精品内容</a>
+          <a class="btn-ghost" href="#creators">认识创作者</a>
+          <a class="btn-ghost" href="#news">企业动态</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b data-count="210">0</b><small>原创作品上线</small></div>
+          <div class="stat"><b data-count="380">0</b><small>签约创作者</small></div>
+          <div class="stat"><b data-count="96">0</b><small>万社区用户</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-frame">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 800'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b1a3d'/%3E%3Cstop offset='0.55' stop-color='%236a3b86'/%3E%3Cstop offset='1' stop-color='%23e86a92'/%3E%3C/linearGradient%3E%3CradialGradient id='g2' cx='0.7' cy='0.25' r='0.7'%3E%3Cstop offset='0' stop-color='%23f7d9a6' stop-opacity='0.95'/%3E%3Cstop offset='1' stop-color='%23f7d9a6' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='640' height='800' fill='url(%23g1)'/%3E%3Crect width='640' height='800' fill='url(%23g2)'/%3E%3Ccircle cx='470' cy='190' r='86' fill='%23fff3d6' opacity='0.88'/%3E%3Ccircle cx='470' cy='190' r='130' fill='none' stroke='%23fff3d6' stroke-opacity='0.35' stroke-width='2'/%3E%3Cpath d='M0 560 Q160 470 320 540 T640 500 V800 H0 Z' fill='%2324152f' opacity='0.72'/%3E%3Cpath d='M0 630 Q180 550 360 620 T640 590 V800 H0 Z' fill='%231a0e24' opacity='0.85'/%3E%3Cg fill='%23f7b8cd' opacity='0.9'%3E%3Ccircle cx='120' cy='140' r='4'/%3E%3Ccircle cx='210' cy='86' r='3'/%3E%3Ccircle cx='560' cy='330' r='4'/%3E%3Ccircle cx='90' cy='350' r='3'/%3E%3Ccircle cx='300' cy='220' r='2.5'/%3E%3C/g%3E%3Cg stroke='%23ffffff' stroke-opacity='0.24' stroke-width='1.4' fill='none'%3E%3Cpath d='M60 700 L160 600 L240 690 L340 570'/%3E%3Cpath d='M420 260 L520 200 L600 290'/%3E%3C/g%3E%3Ctext x='46' y='742' font-family='sans-serif' font-size='26' fill='%23ffe6f2' opacity='0.92'%3E%E5%A4%A9%E9%99%8D%E5%A5%B3%E5%AD%90%3C/text%3E%3C/svg%3E" alt="天降女子动漫品牌主视觉：夜空中的少女剪影与星轨">
+        </div>
+        <div class="hero-float">本季主推 · 雪落无声时</div>
+        <div class="hero-badge"><span class="dot">NEW</span><span>《千夜灯行》角色企划<br>全网预约已开启</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="focus" id="focus">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Focus · 焦点内容</div>
+          <h2>本周焦点：被认真对待的少女故事</h2>
+          <p>由官方编辑部与签约创作者共同推荐，每一部都经过内容审核与品质把控，涵盖奇幻叙事、人物访谈与创作幕后。</p>
+        </div>
+        <a class="btn-ghost" href="#wall">查看全部精品内容</a>
+      </div>
+
+      <div class="focus-grid">
+        <article class="card focus-main">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='a1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2233'/%3E%3Cstop offset='0.6' stop-color='%232a4d6e'/%3E%3Cstop offset='1' stop-color='%237fe0c4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23a1)'/%3E%3Cg fill='%23ffffff' opacity='0.85'%3E%3Ccircle cx='640' cy='96' r='44'/%3E%3C/g%3E%3Cg stroke='%23dff6ee' stroke-width='2' opacity='0.4' fill='none'%3E%3Cpath d='M0 340 L140 240 L260 320 L420 200 L560 290 L700 210 L800 270'/%3E%3Cpath d='M0 390 L180 300 L320 370 L480 260 L640 340 L800 300'/%3E%3C/g%3E%3Cg fill='%23f7f0ff' opacity='0.9'%3E%3Cpath d='M330 250 l16 32 34 6 -24 24 6 34 -32 -16 -32 16 6 -34 -24 -24 34 -6z'/%3E%3C/g%3E%3Ctext x='40' y='410' font-family='sans-serif' font-size='24' fill='%23eaf7f2' opacity='0.9'%3E%E9%9B%AA%E8%90%BD%E6%97%A0%E5%A3%B0%E6%97%B6%3C/text%3E%3C/svg%3E" alt="《雪落无声时》第一集封面：雪山与星月下的少女剪影">
+            <span class="cover-tag">官方原创 · 连载中</span>
+            <div class="play-badge"><span></span></div>
+            <div class="cover-meta"><span>系列剧集 · 每集 12 分钟</span><span>更新至第 3 集</span></div>
+          </div>
+          <div class="card-body">
+            <h3>《雪落无声时》第 3 集：她把整个冬天背在身上</h3>
+            <p>一个总在深夜里独自扫雪的少女，遇见了会说话的雪灯笼。本集聚焦「陪伴」与「告别」的主题，以长镜头与留白呈现，导演分镜手稿同步公开。</p>
+            <div class="tag-row"><span class="tag">奇幻叙事</span><span class="tag rose">创作幕后</span><span class="tag gold">情感故事</span></div>
+            <div class="card-foot">
+              <span class="author-mini" data-author="雪野灯"><span class="avatar" style="background:linear-gradient(135deg,#3a6ea5,#7fe0c4)">雪</span>雪野灯</span>
+              <div class="act-group">
+                <button class="act" data-like>♡ <span>1284</span></button>
+                <button class="act" data-save>☆ 收藏</button>
+                <button class="act" data-share>分享</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='b1' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23f2c14e'/%3E%3Cstop offset='1' stop-color='%23e86a92'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='%23fff6e8'/%3E%3Ccircle cx='600' cy='140' r='90' fill='url(%23b1)' opacity='0.9'/%3E%3Cg stroke='%232b1a3d' stroke-width='3' fill='none' opacity='0.7'%3E%3Crect x='80' y='120' width='220' height='200' rx='14'/%3E%3Cpath d='M80 180 h220 M140 120 v200'/%3E%3C/g%3E%3Cg fill='%23e86a92' opacity='0.75'%3E%3Ccircle cx='420' cy='300' r='26'/%3E%3Ccircle cx='480' cy='260' r='16'/%3E%3Ccircle cx='360' cy='250' r='12'/%3E%3C/g%3E%3Ctext x='40' y='410' font-family='sans-serif' font-size='22' fill='%232b1a3d'%3E%E8%AE%BE%E5%AE%9A%E9%9B%86%E8%AE%BF%E8%B0%88%3C/text%3E%3C/svg%3E" alt="角色设定集访谈封面：暖色几何构成与画稿">
+            <span class="cover-tag">人物访谈</span>
+            <div class="play-badge"><span></span></div>
+            <div class="cover-meta"><span>访谈 · 28 分钟</span><span>官方发布</span></div>
+          </div>
+          <div class="card-body">
+            <h3>角色设定集访谈：一件校服改了三十二稿</h3>
+            <p>服装设定师林见夏聊创作细节：为什么主角的袖口总要短一截，以及「不完美」如何成为角色辨识度。</p>
+            <div class="tag-row"><span class="tag rose">人物访谈</span><span class="tag">艺术美学</span></div>
+            <div class="card-foot">
+              <span class="author-mini" data-author="林见夏"><span class="avatar" style="background:linear-gradient(135deg,#d4557c,#f0c26b)">林</span>林见夏</span>
+              <div class="act-group">
+                <button class="act" data-like>♡ <span>642</span></button>
+                <button class="act" data-save>☆ 收藏</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cover">
+            <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect width='800' height='450' fill='%2315161f'/%3E%3Cg stroke='%237fe0c4' stroke-width='2' fill='none' opacity='0.8'%3E%3Cpath d='M40 400 L160 250 L260 320 L380 180 L520 300 L650 170 L780 260'/%3E%3C/g%3E%3Cg fill='%23e86a92' opacity='0.85'%3E%3Ccircle cx='200' cy='120' r='4'/%3E%3Ccircle cx='320' cy='90' r='3'/%3E%3Ccircle cx='470' cy='130' r='5'/%3E%3Ccircle cx='620' cy='90' r='3'/%3E%3C/g%3E%3Cg fill='%23f0c26b' opacity='0.9'%3E%3Crect x='330' y='250' width='140' height='80' rx='8'/%3E%3C/g%3E%3Cg stroke='%23fff' stroke-opacity='0.5' stroke-width='2' fill='none'%3E%3Cpath d='M330 250 l40 -30 h140 l-40 30'/%3E%3Cpath d='M470 250 l40 -30 v80 l-40 30'/%3E%3C/g%3E%3Ctext x='40' y='420' font-family='sans-serif' font-size='22' fill='%23b9e8dd'%3E%E5%88%9B%E4%BD%9C%E4%B8%87%E8%8A%B1%E7%AD%92%3C/text%3E%3C/svg%3E" alt="创作万花筒栏目封面：深色背景上的荧光线条与立方体">
+            <span class="cover-tag">教程干货</span>
+            <div class="play-badge"><span></span></div>
+            <div class="cover-meta"><span>教程 · 16 分钟</span><span>新人友好</span></div>
+          </div>
+          <div class="card-body">
+            <h3>两分钟学会分镜草图：用手机也能画镜头</h3>
+            <p>从镜头语言到节奏标注，一份可复用的新手分镜模板，附带常见错误对照表，适合投稿前自检。</p>
+            <div class="tag-row"><span class="tag gold">实用技巧</span><span class="tag">教程干货</span></div>
+            <div class="card-foot">
+              <span class="author-mini" data-author="拾光阿澈"><span class="avatar" style="background:linear-gradient(135deg,#7fe0c4,#3a6ea5)">拾</span>拾光阿澈</span>
+              <div class="act-group">
+                <button class="act" data-like>♡ <span>933</span></button>
+                <button class="act" data-save>☆ 收藏</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题 -->
+  <section class="topics" id="topics">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Topics · 专题企划</div>
+          <h2>持续运营的原创专题，值得信赖的内容策划</h2>
+          <p>官方企划部每季度推出主题单元，围绕女性成长、城市探索与奇幻想象展开，欢迎创作者报名参与联合创作。</p>
+        </div>
+        <a class="btn-ghost" href="#contact">报名联合创作</a>
+      </div>
+      <div class="topic-grid">
+        <article class="topic">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Cdefs%3E%3ClinearGradient id='t1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233c1f4d'/%3E%3Cstop offset='1' stop-color='%23a53d70'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='320' fill='url(%23t1)'/%3E%3Cg fill='%23f7d9a6' opacity='0.9'%3E%3Ccircle cx='120' cy='90' r='58'/%3E%3C/g%3E%3Cg stroke='%23f7b8cd' stroke-width='2' opacity='0.65' fill='none'%3E%3Cpath d='M0 260 Q120 200 240 250 T480 230'/%3E%3Cpath d='M0 290 Q120 240 240 285 T480 265'/%3E%3C/g%3E%3C/svg%3E" alt="专题千夜灯行封面：紫金色调的圆月与波浪线">
+          <h3>千夜灯行</h3>
+          <p>以「一盏灯」为线索的系列短篇，讲述陌生人与陌生人之间的善意接力。</p>
+          <span class="status">更新至第 6 夜</span>
+        </article>
+        <article class="topic">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%230e2b2b'/%3E%3Cg fill='%237fe0c4' opacity='0.35'%3E%3Crect x='40' y='190' width='60' height='110'/%3E%3Crect x='120' y='150' width='48' height='150'/%3E%3Crect x='188' y='210' width='70' height='90'/%3E%3Crect x='278' y='130' width='54' height='170'/%3E%3Crect x='352' y='175' width='80' height='125'/%3E%3C/g%3E%3Cg fill='%23f0c26b' opacity='0.9'%3E%3Ccircle cx='380' cy='70' r='34'/%3E%3C/g%3E%3C/svg%3E" alt="专题城市与她的房间封面：夜色楼群与月亮">
+          <h3>城市与她的房间</h3>
+          <p>六位年轻女性创作者记录自己出租屋里的第一个冬天，真实、不加修饰的生活切片。</p>
+          <span class="status">已完结 · 全 6 集</span>
+        </article>
+        <article class="topic">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%23fdf1e4'/%3E%3Cg stroke='%23d4557c' stroke-width='3' fill='none'%3E%3Cpath d='M60 260 L120 150 L180 220 L250 110 L320 200 L390 120 L430 180'/%3E%3C/g%3E%3Cg fill='%23e86a92' opacity='0.5'%3E%3Ccircle cx='120' cy='150' r='9'/%3E%3Ccircle cx='250' cy='110' r='9'/%3E%3Ccircle cx='390' cy='120' r='9'/%3E%3C/g%3E%3Cg stroke='%232b1a3d' stroke-width='2' opacity='0.3' fill='none'%3E%3Ccircle cx='240' cy='160' r='130'/%3E%3Ccircle cx='240' cy='160' r='96'/%3E%3C/g%3E%3C/svg%3E" alt="专题第一次当导演封面：米白底粉红折线与圆环">
+          <h3>第一次当导演</h3>
+          <p>面向新人的纪实企划，完整记录三位创作者从剧本到成片的 90 天。</p>
+          <span class="status">招募中 · 报名进行时</span>
+        </article>
+        <article class="topic">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 320'%3E%3Crect width='480' height='320' fill='%231b1b2e'/%3E%3Cg stroke='%23f0c26b' stroke-width='2' opacity='0.75' fill='none'%3E%3Cpath d='M240 40 L300 160 L240 280 L180 160 Z'/%3E%3Cpath d='M240 90 L278 160 L240 230 L202 160 Z'/%3E%3C/g%3E%3Cg fill='%23e86a92' opacity='0.8'%3E%3Ccircle cx='70' cy='260' r='20'/%3E%3Ccircle cx='410' cy='70' r='14'/%3E%3C/g%3E%3C/svg%3E" alt="专题奇幻设定考封面：深色背景金色菱形与红点">
+          <h3>奇幻设定考</h3>
+          <p>世界观顾问带你看懂架空规则的逻辑，从魔法代价到族群历史逐一拆解。</p>
+          <span class="status">每周四更新</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者 -->
+  <section class="creators" id="creators">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Creators · 创作者矩阵</div>
+          <h2>380 位签约创作者，构成多元而包容的内容生态</h2>
+          <p>我们为创作者提供分成、版权登记、器材支持与选题辅导，让原创被正版保护，让才华获得长期回报。</p>
+        </div>
+        <a class="btn-ghost" href="#contact">申请成为创作者</a>
+      </div>
+      <div class="creator-grid">
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#3a6ea5,#7fe0c4)">雪</span>
+          <div class="creator-info">
+            <h3>雪野灯 <span class="v-badge">官方认证</span></h3>
+            <div class="field">奇幻叙事 · 系列剧集</div>
+            <p>擅长用留白讲情绪，代表作《雪落无声时》。坚持手绘分镜，一年更新不超过四集，却集集被反复讨论。</p>
+            <div class="creator-stats"><span>作品 <b>18</b></span><span>关注 <b>12.6 万</b></span><span>口碑 <b>9.4</b></span></div>
+          </div>
+        </article>
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#d4557c,#f0c26b)">林</span>
+          <div class="creator-info">
+            <h3>林见夏 <span class="v-badge">设定顾问</span></h3>
+            <div class="field">艺术美学 · 角色设计</div>
+            <p>服装设定师出身，参与 40 余部作品的角色视觉，习惯把生活里的小物件缝进角色的袖口与发带。</p>
+            <div class="creator-stats"><span>作品 <b>42</b></span><span>关注 <b>8.3 万</b></span><span>口碑 <b>9.2</b></span></div>
+          </div>
+        </article>
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#7fe0c4,#3a6ea5)">拾</span>
+          <div class="creator-info">
+            <h3>拾光阿澈 <span class="v-badge">新人榜 TOP1</span></h3>
+            <div class="field">教程干货 · 剪辑分享</div>
+            <p>以「两分钟一个知识点」的节奏做教程，被社区称为新人的第一堂动画课，累计播放超过 900 万。</p>
+            <div class="creator-stats"><span>作品 <b>66</b></span><span>关注 <b>15.2 万</b></span><span>口碑 <b>9.0</b></span></div>
+          </div>
+        </article>
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#b04fd6,#e86a92)">南</span>
+          <div class="creator-info">
+            <h3>南桥旧事 <span class="v-badge">城市影像</span></h3>
+            <div class="field">城市探索 · 在地文化</div>
+            <p>用镜头记录南方小城的雨季与旧街，作品少对白、多环境声，被评价为「可以听见湿度的影像」。</p>
+            <div class="creator-stats"><span>作品 <b>27</b></span><span>关注 <b>6.9 万</b></span><span>口碑 <b>9.3</b></span></div>
+          </div>
+        </article>
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#e5a840,#d4557c)">昼</span>
+          <div class="creator-info">
+            <h3>昼川薄荷 <span class="v-badge">音乐企划</span></h3>
+            <div class="field">音乐现场 · 治愈影像</div>
+            <p>独立音乐人兼导演，为动画短片创作原声。相信一段旋律可以替角色说出没讲完的台词。</p>
+            <div class="creator-stats"><span>作品 <b>33</b></span><span>关注 <b>10.1 万</b></span><span>口碑 <b>9.1</b></span></div>
+          </div>
+        </article>
+        <article class="creator">
+          <span class="avatar" style="background:linear-gradient(135deg,#4a2c62,#7fe0c4)">青</span>
+          <div class="creator-info">
+            <h3>青苔工作室 <span class="v-badge">团队创作者</span></h3>
+            <div class="field">手作 DIY · 定格动画</div>
+            <p>四人小团队，用黏土与纸张做定格动画，一秒钟画面要拍 12 张照片，慢工出细活。</p>
+            <div class="creator-stats"><span>作品 <b>21</b></span><span>关注 <b>7.4 万</b></span><span>口碑 <b>9.2</b></span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影像墙 -->
+  <section class="wall" id="wall">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Gallery · 影像墙</div>
+          <h2>社区作品墙：真实日常，也值得被认真记录</h2>
+          <p>用户上传的原创影像，经官方审核后展示。我们尊重每一份创意，也坚持正版与授权原则。</p>
+        </div>
+        <span class="tag rose">共 2,480 份投稿</span>
+      </div>
+      <div class="wall-grid">
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='w1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23ffe9f2'/%3E%3Cstop offset='1' stop-color='%23e8a9c4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23w1)'/%3E%3Cg stroke='%232b1a3d' stroke-width='3' fill='none' opacity='0.6'%3E%3Cpath d='M120 340 q60 -120 120 0 t120 0'/%3E%3Cpath d='M420 300 q50 -90 100 0 t100 0'/%3E%3C/g%3E%3Cg fill='%232b1a3d' opacity='0.55'%3E%3Ccircle cx='160' cy='180' r='10'/%3E%3Ccircle cx='470' cy='150' r='7'/%3E%3Ccircle cx='660' cy='210' r='12'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：粉色练习曲里的少女与波浪线条">
+          <figcaption>《粉色练习曲》｜ 定格动画 · 青苔工作室</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23162a2a'/%3E%3Cg fill='%237fe0c4' opacity='0.8'%3E%3Ccircle cx='400' cy='250' r='110' fill='none' stroke='%237fe0c4' stroke-width='3'/%3E%3Ccircle cx='400' cy='250' r='64' fill='none' stroke='%23f0c26b' stroke-width='3'/%3E%3C/g%3E%3Cpath d='M400 60 V440 M210 250 H590' stroke='%237fe0c4' stroke-width='2' opacity='0.35'/%3E%3C/svg%3E" alt="影像墙作品：夜晚的巡游者环形构图">
+          <figcaption>《夜晚的巡游者》｜ 短片 · 雪野灯</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23f5efe2'/%3E%3Cg fill='%23d4557c' opacity='0.7'%3E%3Crect x='90' y='150' width='120' height='200' rx='8'/%3E%3Crect x='240' y='200' width='90' height='150' rx='8'/%3E%3Crect x='360' y='120' width='140' height='230' rx='8'/%3E%3C/g%3E%3Cg fill='%230f2233' opacity='0.7'%3E%3Crect x='540' y='180' width='170' height='170' rx='8'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：手作小屋里整齐的纸板书架">
+          <figcaption>《手作小屋》｜ 幕后记录 · 林见夏</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%232b1a3d'/%3E%3Cg stroke='%23f7b8cd' stroke-width='3' fill='none' opacity='0.9'%3E%3Cpath d='M80 360 Q300 60 520 360'/%3E%3C/g%3E%3Cg fill='%23f0c26b' opacity='0.9'%3E%3Ccircle cx='300' cy='190' r='22'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='0.6'%3E%3Ccircle cx='150' cy='130' r='4'/%3E%3Ccircle cx='450' cy='160' r='5'/%3E%3Ccircle cx='380' cy='90' r='3'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：星轨下的告别镜头">
+          <figcaption>《星轨下》｜ 逐帧动画 · 昼川薄荷</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%23eef6f2'/%3E%3Cg stroke='%232b1a3d' stroke-width='2.5' fill='none' opacity='0.7'%3E%3Ccircle cx='300' cy='210' r='100'/%3E%3Ccircle cx='300' cy='210' r='58'/%3E%3C/g%3E%3Cg fill='%23d4557c' opacity='0.8'%3E%3Crect x='278' y='196' width='44' height='28' rx='6'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：旧相机里的第一支短片">
+          <figcaption>《旧相机》｜ 纪录短片 · 拾光阿澈</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%23fff3e2'/%3E%3Cg fill='%23e86a92' opacity='0.65'%3E%3Ccircle cx='170' cy='150' r='46'/%3E%3Ccircle cx='420' cy='290' r='64'/%3E%3C/g%3E%3Cg stroke='%232b1a3d' stroke-width='3' fill='none' opacity='0.55'%3E%3Cpath d='M60 380 C200 280 400 420 540 300'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：夏天结束时的手写信">
+          <figcaption>《夏天结束》｜ 分镜稿 · 南桥旧事</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%231d1229'/%3E%3Cg stroke='%237fe0c4' stroke-width='2' fill='none' opacity='0.7'%3E%3Cpath d='M100 350 L220 180 L320 300 L440 140 L520 250'/%3E%3C/g%3E%3Cg fill='%23f0c26b' opacity='0.9'%3E%3Ccircle cx='120' cy='120' r='16'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：冒险者的地图桌">
+          <figcaption>《地图桌》｜ 概念片 · 青苔工作室</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%23fdf0f5'/%3E%3Cg fill='%23b04fd6' opacity='0.5'%3E%3Crect x='120' y='120' width='150' height='150' rx='18'/%3E%3Crect x='320' y='200' width='160' height='120' rx='18'/%3E%3C/g%3E%3Cg stroke='%232b1a3d' stroke-width='2.5' fill='none' opacity='0.6'%3E%3Cpath d='M120 330 H480'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：色块练习与角色剪影">
+          <figcaption>《色块练习》｜ 设定稿 · 林见夏</figcaption>
+        </figure>
+        <figure class="wall-item">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 450'%3E%3Crect width='600' height='450' fill='%230f2233'/%3E%3Cg fill='%23e86a92' opacity='0.85'%3E%3Ccircle cx='300' cy='225' r='95' fill='none' stroke='%23e86a92' stroke-width='3'/%3E%3C/g%3E%3Cg fill='%23f7d9a6' opacity='0.85'%3E%3Ccircle cx='300' cy='225' r='24'/%3E%3C/g%3E%3Cg stroke='%237fe0c4' stroke-width='1.5' opacity='0.5' fill='none'%3E%3Cpath d='M300 60 V390 M135 225 H465'/%3E%3C/g%3E%3C/svg%3E" alt="影像墙作品：月相仪式系列封面">
+          <figcaption>《月相仪式》｜ 系列封面 · 雪野灯</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Voices · 社区口碑</div>
+          <h2>用户首选的理由，写在每一条真实反馈里</h2>
+          <p>过去一年我们收集了 4,200 余条社区反馈，以下为节选，均来自真实用户授权展示。</p>
+        </div>
+      </div>
+      <div class="review-grid">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>关注雪野灯两年了，最喜欢她那种不着急的叙事。看完《雪落无声时》第三集，我在阳台站了很久，想起自己刚毕业那年一个人搬家的冬天。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#3a6ea5,#7fe0c4)">阿</span><div><b>阿柚不加冰</b><small>社区用户 · 3 年</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>作为学生党，这里的教程真的救了我。分镜模板直接拿去用了，投稿第一次就过了审核，编辑还给了逐条修改建议，很受用。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#d4557c,#f0c26b)">小</span><div><b>小满要画完</b><small>新人创作者</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★☆</div>
+          <p>画质和声音都很讲究，能看出制作团队的用心。唯一希望专题更新再快一点点，千夜灯行每一夜都等得有点久。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#7fe0c4,#3a6ea5)">橘</span><div><b>橘子汽水味</b><small>社区用户 · 2 年</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>很欣赏这个平台对版权的态度。投稿前会明确告知授权范围，签约之后分成也很透明，作为独立创作者，这点比什么都重要。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#b04fd6,#e86a92)">松</span><div><b>松间有风</b><small>签约创作者</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>和孩子一起看的，画面温柔，没有让人不适的内容，角色也很立体。作为家长，我比较放心这里的原创内容分级。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#e5a840,#d4557c)">周</span><div><b>周末妈妈</b><small>家庭用户</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★☆</div>
+          <p>影像墙是我每周必逛的地方，经常能发现很有灵气的新人。希望以后能加上按风格筛选的功能，找起来会更方便。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#4a2c62,#7fe0c4)">沉</span><div><b>沉舟侧畔</b><small>社区用户 · 1 年</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>参加了第一期创作者扶持计划，拿到了器材支持和一位前辈的一对一辅导。三个月后我的短片被专题收录了，那种被看见的感觉很难形容。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#3a6ea5,#b04fd6)">晚</span><div><b>晚风慢递</b><small>扶持计划成员</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★☆</div>
+          <p>页面简洁，找内容不费劲，搜索框能直接搜到创作者主页。如果能加个追更提醒就更好了，现在都是靠我记日期。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#d4557c,#7fe0c4)">麦</span><div><b>麦田守夜人</b><small>社区用户 · 2 年</small></div></div>
+        </article>
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>作为影视专业的学生，这里的幕后内容比很多付费课程都扎实。特别是设定考那档，讲架空规则的逻辑讲得很清楚。</p>
+          <div class="review-user"><span class="avatar" style="background:linear-gradient(135deg,#f0c26b,#e86a92)">山</span><div><b>山止川行</b><small>学生用户</small></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 企业动态 -->
+  <section class="news" id="news">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Newsroom · 企业动态</div>
+          <h2>官方发布与持续运营记录</h2>
+          <p>品牌故事、合作进展与内容更新日志，公开透明地同步给每一位关注天降女子动漫的朋友。</p>
+        </div>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <div class="news-date"><b>06</b><small>08 月</small></div>
+          <div>
+            <h3>创作者扶持计划第二期开放报名</h3>
+            <p>面向新人开放 60 个名额，提供器材支持、版权登记协助与月度选题辅导，报名截止 8 月 31 日。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>21</b><small>07 月</small></div>
+          <div>
+            <h3>《千夜灯行》角色设定集开始预约</h3>
+            <p>收录 120 余张设定稿与幕后手记，采用环保纸印刷，预约用户可获得限定书签。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>09</b><small>07 月</small></div>
+          <div>
+            <h3>与南方三所高校达成校企合作</h3>
+            <p>共建动画创作实践基地，每年提供 40 个实习岗位，鼓励学生在真实项目中完成从脚本到成片的全流程。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>28</b><small>06 月</small></div>
+          <div>
+            <h3>社区内容分级规则正式上线</h3>
+            <p>新增适龄提示与内容标签体系，让家庭用户与青少年用户都能找到更合适的内容区间。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <div class="news-date"><b>15</b><small>06 月</small></div>
+          <div>
+            <h3>年度原创企划《千夜灯行》启动</h3>
+            <p>以善意接力为主题的系列短篇，首夜上线 48 小时播放突破 80 万，专题页同步更新。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 合作伙伴 -->
+  <section class="partners" id="partners">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Partners · 合作品牌</div>
+          <h2>与值得信赖的伙伴，一起把原创做长久</h2>
+        </div>
+      </div>
+      <div class="partner-row">
+        <span class="partner">青梧文化</span>
+        <span class="partner">南方动画工坊</span>
+        <span class="partner">纸飞机出版社</span>
+        <span class="partner">听澜音乐</span>
+        <span class="partner">拾光影像器材</span>
+        <span class="partner">城市青年艺术节</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap faq-wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Help · 帮助中心</div>
+          <h2>常见问题，帮你更快开始</h2>
+          <p>如果以下内容没有解决你的问题，可通过页面底部联系方式找到我们，工作日内会尽快回复。</p>
+        </div>
+      </div>
+      <details open>
+        <summary>如何向天降女子动漫投稿自己的原创作品？</summary>
+        <p>点击页头的「投稿入口」填写作品信息与授权说明，上传成片或分镜稿即可。审核周期通常为 5 至 7 个工作日，通过后会收到站内通知与编辑反馈；未通过的作品也可以按建议修改后再次提交。</p>
+      </details>
+      <details>
+        <summary>作品被收录后，版权归属如何界定？</summary>
+        <p>创作者始终保留作品著作权。平台仅在你授权的范围内进行展示、推荐与专题收录，所有合作均签署书面授权协议，明确使用期限、渠道与分成方式，不存在默认转让条款。</p>
+      </details>
+      <details>
+        <summary>创作者扶持计划需要满足哪些条件？</summary>
+        <p>年满 18 周岁、拥有至少一部完整原创作品的创作者均可报名。我们更看重作品的完成度与个人表达，而非粉丝数量。入选后将获得器材支持、版权登记协助、月度选题辅导与一次专题推荐机会。</p>
+      </details>
+      <details>
+        <summary>内容分级是如何执行的？</summary>
+        <p>平台按适龄提示将内容分为通用、青少年适宜与成人向三个区间，青少年适宜内容不包含惊悚、暴力画面。上传时创作者需主动选择分级标签，编辑部会进行复核，并对误标内容发起调整。</p>
+      </details>
+      <details>
+        <summary>能否下载页面中的作品素材用于二次创作？</summary>
+        <p>未经授权请勿下载或二次使用他人作品。我们为获得授权的创作者提供官方素材包下载入口，其中包含分镜模板、字体与音效资源，均标注了可商用范围，请按说明使用。</p>
+      </details>
+      <details>
+        <summary>品牌是否接受商业合作与联名企划？</summary>
+        <p>接受。我们与出版、音乐、器材及线下艺术节等领域的伙伴保持长期合作，愿意尝试联名企划、共创短片与线下展映等形式。请在联系邮件中说明合作背景与预期形式，商务团队会在 3 个工作日内回复。</p>
+      </details>
+      <details>
+        <summary>为什么有些专题更新比较慢？</summary>
+        <p>我们坚持精品内容的制作节奏，部分系列由小团队手工完成分镜与上色，因此更新周期较长。每个专题页都会标注当前状态（连载中、已完结、招募中），方便你合理安排关注。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 联系/投稿 -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>把你的故事交给这里</h2>
+          <p>无论你已经有成片，还是只有一个模糊的念头，都欢迎和我们聊聊。天降女子动漫希望成为创作者长期的伙伴，而不只是一次合作的甲方。</p>
+          <div class="contact-actions">
+            <button class="btn-solid" type="button" data-modal="submitModal">提交作品</button>
+            <button class="btn-ghost" type="button" data-modal="feedbackModal">问题反馈</button>
+            <button class="btn-ghost" type="button" data-share>分享官网</button>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-row">
+            <span class="ic">邮</span>
+            <div><b>合作与投稿邮箱</b><span>creator@tianjiang-girls.example</span></div>
+          </div>
+          <div class="info-row">
+            <span class="ic">时</span>
+            <div><b>工作时间</b><span>周一至周五 10:00 - 18:30（法定节假日除外）</span></div>
+          </div>
+          <div class="info-row">
+            <span class="ic">址</span>
+            <div><b>品牌工作室</b><span>城市创意园 B 栋 4 层 · 天降女子动漫内容中心</span></div>
+          </div>
+          <div class="info-row">
+            <span class="ic">号</span>
+            <div><b>官方账号</b><span>搜索「天降女子动漫」可查看官方发布信息与更新日历</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand" style="gap:11px">
+          <span class="brand-mark">天</span>
+          <span>
+            <span class="brand-name">天降女子动漫</span>
+            <span class="brand-sub" style="color:#8b7d9c">OFFICIAL SITE</span>
+          </span>
+        </div>
+        <p>天降女子动漫官方网站 · 深耕女性向奇幻原创动画，以匠心与陪伴为核心，构建多元、包容、值得信赖的内容生态。原创不易，感谢每一位认真创作的人。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容</h4>
+        <a href="#focus">焦点内容</a>
+        <a href="#topics">专题企划</a>
+        <a href="#wall">影像墙</a>
+        <a href="#reviews">社区口碑</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="#creators">创作者矩阵</a>
+        <a href="#news">企业动态</a>
+        <a href="#partners">合作品牌</a>
+        <a href="#faq">帮助中心</a>
+      </div>
+      <div class="footer-col">
+        <h4>参与</h4>
+        <a href="#contact">投稿入口</a>
+        <a href="#contact">商务合作</a>
+        <a href="#news">扶持计划</a>
+        <a href="#contact">问题反馈</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2018-2025 天降女子动漫 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容备案占位号 XXXX-XXXX · 网络文化经营许可占位 · 原创正版 高清呈现</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div class="modal-mask" id="submitModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="submitTitle">
+    <h3 id="submitTitle">提交作品 · 投稿入口</h3>
+    <p>请填写基础信息，编辑部会在 5 至 7 个工作日内通过邮件回复审核结果与修改建议。</p>
+    <input type="text" id="workName" placeholder="作品名称，例如：雪落无声时 第 4 集" aria-label="作品名称">
+    <input type="text" id="workContact" placeholder="联系邮箱或常用社交账号" aria-label="联系方式">
+    <textarea id="workDesc" placeholder="用两三句话介绍作品类型、时长与授权情况" aria-label="作品简介"></textarea>
+    <div class="modal-actions">
+      <button class="btn-ghost" type="button" data-close>取消</button>
+      <button class="btn-solid" type="button" id="submitWork">确认提交</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-mask" id="feedbackModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fbTitle">
+    <h3 id="fbTitle">问题反馈</h3>
+    <p>你遇到的问题会被记录到内容运营工单，我们会在工作日内跟进处理。</p>
+    <textarea id="fbText" placeholder="请描述遇到的问题，例如页面展示、内容分级或合作咨询" aria-label="反馈内容"></textarea>
+    <div class="modal-actions">
+      <button class="btn-ghost" type="button" data-close>取消</button>
+      <button class="btn-solid" type="button" id="sendFeedback">提交反馈</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-mask" id="authorModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="authorTitle">
+    <h3 id="authorTitle">创作者资料</h3>
+    <p id="authorText">正在加载创作者信息。</p>
+    <div class="modal-actions">
+      <button class="btn-ghost" type="button" data-close>关闭</button>
+      <a class="btn-solid" href="#creators" data-close>查看创作者矩阵</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var toast = document.getElementById('toast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  /* 移动端导航折叠 */
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  mainNav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 820){
+      mainNav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+      navToggle.textContent = '☰';
+    }
+  });
+
+  /* 搜索反馈 */
+  var searchForm = document.getElementById('searchForm');
+  var searchInput = document.getElementById('searchInput');
+  var searchHint = document.getElementById('searchHint');
+  var searchPool = ['雪落无声时','千夜灯行','林见夏','拾光阿澈','城市与她的房间','奇幻设定考','青苔工作室','创作万花筒','第一次当导演','南桥旧事'];
+  function fakeTopWords(kw){
+    return searchPool.filter(function(w){ return w.indexOf(kw) !== -1 || kw.indexOf(w) !== -1; }).slice(0,4);
+  }
+  searchForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var kw = searchInput.value.trim();
+    if(!kw){
+      searchHint.textContent = '请输入想找的作品、创作者或专题名称。';
+      searchHint.classList.add('show');
+      return;
+    }
+    var hits = fakeTopWords(kw);
+    if(hits.length){
+      searchHint.innerHTML = '为你匹配到 ' + hits.length + ' 条内容：' + hits.join('、') + '。可前往<a href="#focus" style="color:#e86a92">焦点内容</a>查看。';
+    }else{
+      searchHint.textContent = '暂未找到“' + kw + '”的公开内容，可尝试更短的关键词，或通过投稿入口自荐作品。';
+    }
+    searchHint.classList.add('show');
+    setTimeout(function(){ searchHint.classList.remove('show'); }, 5200);
+  });
+  document.addEventListener('click', function(e){
+    if(!searchHint.contains(e.target) && !searchForm.contains(e.target)){
+      searchHint.classList.remove('show');
+    }
+  });
+
+  /* 点赞 / 收藏 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-like]');
+    if(likeBtn){
+      var span = likeBtn.querySelector('span');
+      var num = parseInt(span.textContent.replace(/[^\d]/g,''), 10) || 0;
+      if(likeBtn.classList.toggle('liked')){
+        span.textContent = (num + 1);
+        likeBtn.firstChild.nodeValue = '♥ ';
+        showToast('已标记喜欢，感谢你的支持');
+      }else{
+        span.textContent = Math.max(0, num - 1);
+        likeBtn.firstChild.nodeValue = '♡ ';
+      }
+      return;
+    }
+    var saveBtn = e.target.closest('[data-save]');
+    if(saveBtn){
+      var on = saveBtn.classList.toggle('saved');
+      saveBtn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      showToast(on ? '已收藏到个人片单' : '已取消收藏');
+      return;
+    }
+    var shareBtn = e.target.closest('[data-share]');
+    if(shareBtn){
+      var link = '#top';
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          showToast('分享链接已复制，可粘贴到微信或微博');
+        }).catch(function(){
+          showToast('可复制当前页地址分享给朋友');
+        });
+      }else{
+        showToast('可复制当前页地址分享给朋友');
+      }
+      return;
+    }
+    var authorMini = e.target.closest('.author-mini');
+    if(authorMini){
+      var name = authorMini.getAttribute('data-author') || '创作者';
+      document.getElementById('authorTitle').textContent = name + ' · 创作者资料';
+      document.getElementById('authorText').textContent = '「' + name + '」为天降女子动漫平台认证创作者，长期参与官方原创企划。擅长以细节塑造人物，作品在社区拥有稳定口碑，可在创作者矩阵中查看其作品数量与关注数据。';
+      openModal('authorModal');
+    }
+  });
+
+  /* 弹窗 */
+  var modals = document.querySelectorAll('.modal-mask');
+  function openModal(id){
+    var m = document.getElementById(id);
+    if(m){ m.classList.add('show'); }
+  }
+  function closeModals(){
+    modals.forEach(function(m){ m.classList.remove('show'); });
+  }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-modal]');
+    if(opener){ openModal(opener.getAttribute('data-modal')); return; }
+    if(e.target.closest('[data-close]')){ closeModals(); return; }
+    if(e.target.classList.contains('modal-mask')){ closeModals(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeModals(); }
+  });
+
+  document.getElementById('submitWork').addEventListener('click', function(){
+    var name = document.getElementById('workName').value.trim();
+    var contact = document.getElementById('workContact').value.trim();
+    if(!name || !contact){
+      showToast('请先填写作品名称与联系方式');
+      return;
+    }
+    document.getElementById('workName').value = '';
+    document.getElementById('workContact').value = '';
+    document.getElementById('workDesc').value = '';
+    closeModals();
+    showToast('投稿已提交，编辑部将在 5 至 7 个工作日内回复');
+  });
+
+  document.getElementById('sendFeedback').addEventListener('click', function(){
+    var txt = document.getElementById('fbText').value.trim();
+    if(!txt){
+      showToast('请先描述你遇到的问题');
+      return;
+    }
+    document.getElementById('fbText').value = '';
+    closeModals();
+    showToast('反馈已记录，感谢你帮助社区变得更好');
+  });
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 620){ toTop.classList.add('show'); }
+    else{ toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 数字滚动 */
+  var counters = document.querySelectorAll('[data-count]');
+  var done = false;
+  function runCounters(){
+    if(done) return;
+    var trigger = document.querySelector('.hero-stats');
+    if(!trigger) return;
+    var rect = trigger.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 40){
+      done = true;
+      counters.forEach(function(el){
+        var target = parseInt(el.getAttribute('data-count'),10) || 0;
+        var start = 0;
+        var step = Math.max(1, Math.round(target / 38));
+        var t = setInterval(function(){
+          start += step;
+          if(start >= target){ start = target; clearInterval(t); }
+          el.textContent = start;
+        }, 22);
+      });
+    }
+  }
+  window.addEventListener('scroll', runCounters, {passive:true});
+  runCounters();
+})();
+</script>
+</body>
+  </html>
